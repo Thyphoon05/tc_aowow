@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 define('AOWOW_REVISION', 12);
 
 /* ================ LOADING ================ */
@@ -12,9 +12,7 @@ $tableprefix = $AoWoWconf['mangos']['aowow'];
 
 $locales = array(
 	0 => 'enus',
-	2 => 'frfr',
-	3 => 'dede',
-	8 => 'ruru',
+	6 => 'eses',
 );
 function checklocale()
 {

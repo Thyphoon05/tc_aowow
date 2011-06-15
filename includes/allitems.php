@@ -119,7 +119,8 @@ function b_type($type, $value, $level)
 	global $green;
 	switch($type)
 	{
-		// белые статы
+		// белые стат
+		case 1: return '+'.$value.LOCALE_STAT_HEALTH.'<br />';				# 1 - Health
 		case 3: return '+'.$value.LOCALE_STAT_AGILITY.'<br />';				# 3 - Agility
 		case 4: return '+'.$value.LOCALE_STAT_STRENGTH.'<br />';			# 4 - Strength
 		case 5: return '+'.$value.LOCALE_STAT_INTELLECT.'<br />';			# 5 - Intellect
@@ -146,7 +147,7 @@ function b_type($type, $value, $level)
 		case 43: $green[] = green_bonus(LOCALE_GBONUS_RESTOREMANA, $value);							return;
 		case 44: $green[] = green_bonus(LOCALE_GBONUS_ARMORPENETRATION, $value, $type, $level);		return;
 		case 45: $green[] = green_bonus(LOCALE_GBONUS_SPELLPOWER, $value);							return;
-		default: $green[] = green_bonus(LOCALE_GBONUS_UNKNOWN, $type);								return;
+		default: return;
 	}
 }
 

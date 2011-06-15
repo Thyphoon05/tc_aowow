@@ -160,7 +160,7 @@ switch($_GET['data'])
 		else
 		{
 			header('Content-type: image/jpeg');
-			$im = @imagecreatefromjpeg('images/icons/medium/'.$iconname.'.jpg');
+			$im = imagecreatefromjpeg('images/icons/medium/'.$iconname.'.jpg');
 
 			if(!$im)
 				exit;
