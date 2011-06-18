@@ -126,7 +126,7 @@
 				</tr>
 				<tr>
 					<th>{#Cooldown#}</th>
-					<td>{if isset($spell.cooldown)}{$spell.cooldown} {#seconds#}{else}<span class="q0">n/a</span>{/if}</td>
+					<td>{if isset($spell.cooldown) and ($spell.cooldown>60)}{$spell.cooldown/60} {#minutes#}{elseif isset($spell.cooldown) and ($spell.cooldown>0) and ($spell.cooldown<60)}{$spell.cooldown} {#seconds#}{else}<span class="q0">n/a</span>{/if}</td>
 				</tr>
 {section name=i loop=$spell.effect}
 				<tr>

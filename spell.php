@@ -71,9 +71,11 @@ if(!$spell = load_cache(SPELL_PAGE, $cache_key))
 			$spell['casttime'] = 'Channeled';
 		else
 			$spell['casttime'] = 'Sofort';
+			
 		// Cooldown
-		if($row['cooldown'] > 0)
+		if ($row['cooldown'] > 0)
 			$spell['cooldown'] = $row['cooldown'] / 1000;
+			
 		// Время действия спелла
 		if($row['durationBase'] > 0)
 			$spell['duration'] = ($row['durationBase'] / 1000).' '.$smarty->get_config_vars('seconds');

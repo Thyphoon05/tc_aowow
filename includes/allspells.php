@@ -1,7 +1,6 @@
 <?php
-
 require_once('includes/allitems.php');
-
+$smarty->config_load($conf_file, 'spell');
 // Названия аур
 $spell_aura_names = array(
 	0 => 'None',
@@ -882,7 +881,7 @@ function allspellsinfo2(&$row, $level=0)
 
 function spell_buff_render($row)
 {
-	global $DB;
+	global $DB, $smarty;
 
 	$x = '<table><tr>';
 	
@@ -906,7 +905,7 @@ function spell_buff_render($row)
 	// Длительность баффа
 	$duration = $DB->selectCell("SELECT durationBase FROM ?_spellduration WHERE durationID=? LIMIT 1", $row['durationID']);
 	if($duration>0)
-		$x .= '<span class="q">'.($duration/1000).' seconds remaining</span>';
+		$x .= '<span class="q">'.($duration/1000).' '.$smarty->get_config_vars('Spells_seconds_remaining').'</span>';
 	
 	$x .= '</td></tr></table>';
 	
