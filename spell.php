@@ -53,7 +53,7 @@ if(!$spell = load_cache(SPELL_PAGE, $cache_key))
 		if($row['manacost'])
 			$spell['manacost'] = $row['manacost'];
 		elseif($row['manacostpercent'])
-			$spell['manacost'] = $row['manacostpercent'].'% '.LOCALE_OF_MANA_BASE;
+			$spell['manacost'] = $row['manacostpercent'].''.LOCALE_OF_MANA_BASE;
 		// Уровень спелла
 		$spell['level'] = $row['levelspell'];
 		// Дальность

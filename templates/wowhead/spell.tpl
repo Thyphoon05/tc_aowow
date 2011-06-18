@@ -114,7 +114,7 @@
 				</tr>
 				<tr>
 					<th style="border-top: 0">{#cost#}</th>
-					<td style="border-top: 0">{if isset($spell.manacost)}{$spell.manacost} {#manas#}{else}{#None#}{/if}</td>
+					<td style="border-top: 0">{if isset($spell.manacost)}{$spell.manacost}{else}{#None#}{/if}</td>
 				</tr>
 				<tr>
 					<th>{#range#}</th>
