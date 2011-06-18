@@ -134,9 +134,9 @@
 		[2, "Flechas"],
         [3, "Balas"]
 	]],
-	[11,"Quivers",,[
-		[3,"Ammo Pouches"],
-		[2,"Quivers"]
+	[11,"Carcajs",,[ // De Google Translate, revisar :P
+		[3,"Bolsas de munición"], 
+		[2,"Carcajs"]
 	]],
 	[9,"Recetas",,[
 		[0, "Libros"],
@@ -208,391 +208,347 @@ var mn_objects=[
     [-2, "Misión"],
     [-6, "Herramientas"]
 ];
-var mn_quests=[
-	[0,"Eastern Kingdoms",,[
-		[36,"Alterac Mountains"],
-		[45,"Arathi Highlands"],
-		[3,"Badlands"],
-		[25,"Blackrock Mountain"],
-		[4,"Blasted Lands"],
-		[46,"Burning Steppes"],
-		[279,"Dalaran Crater"],
-		[41,"Deadwind Pass"],
-		[2257,"Deeprun Tram"],
-		[1,"Dun Morogh"],
-		[10,"Duskwood"],
-		[139,"Eastern Plaguelands"],
-		[12,"Elwynn Forest"],
-		[3430,"Eversong Woods"],
-		[3433,"Ghostlands"],
-		[267,"Hillsbrad Foothills"],
-		[1537,"Ironforge"],
-		[4080,"Isle of Quel'Danas"],
-		[38,"Loch Modan"],
-		[44,"Redridge Mountains"],
-		[51,"Searing Gorge"],
-		[3487,"Silvermoon City"],
-		[130,"Silverpine Forest"],
-		[1519,"Stormwind City"],
-		[33,"Stranglethorn Vale"],
-		[8,"Swamp of Sorrows"],
-		[47,"The Hinterlands"],
-		[85,"Tirisfal Glades"],
-		[1497,"Undercity"],
-		[28,"Western Plaguelands"],
-		[40,"Westfall"],
-		[11,"Wetlands"]
+var mn_quests=[ // De Google translate también :P
+	[0, "Reinos del Este", , [
+		[36,"Montañas de Alterac"],
+		[45,"Tierras Altas de Arathi"],
+		[3, "Tierras Inhóspitas"],
+		[25,"Montaña Roca Negra"],
+		[4, "Las Tierras Devastadas"],
+		[46, "Las Estepas Ardientes"],
+		[279, "Cráter de Dalaran"],
+		[41, "Paso de la Muerte"],
+		[2257, "Tranvía Subterráneo"],
+		[1, "Dun Morogh"],
+		[10, "Bosque del Ocaso"],
+		[139, "Tierras de la Peste"],
+		[12, "Bosque de Elwynn"],
+		[3430, "Bosque Canción Eterna"],
+		[3433, "Tierras Fantasma"],
+		[267, "Laderas de Trabalomas"],
+		[1537, "Forjaz"],
+		[4080, "Isla de Quel'Danas"],
+		[38, "Loch Modan"],
+		[44, "Montañas Crestagrana"],
+		[51, "La Garganta de Fuego"],
+		[3487, "Ciudad de Lunargenta"],
+		[130, "Bosque de Argénteos"],
+		[1519, "Ciudad de Ventormenta"],
+		[33, "Vega de Tuercespina"],
+		[8, "Pantano de las Penas"],
+		[47, "Tierras del Interior"],
+		[85, "Claros de Tirisfal"],
+		[1497, "Entrañas"],
+		[28, "Tierras de la Peste del Oeste"],
+		[40, "Páramos de Poniente"],
+		[11, "Los humedales"]
 	]],
 	[1,"Kalimdor",,[
-		[331,"Ashenvale"],
-		[16,"Azshara"],
-		[3524,"Azuremyst Isle"],
-		[3525,"Bloodmyst Isle"],
-		[148,"Darkshore"],
-		[1657,"Darnassus"],
-		[405,"Desolace"],
-		[14,"Durotar"],
-		[15,"Dustwallow Marsh"],
-		[361,"Felwood"],
-		[357,"Feralas"],
-		[493,"Moonglade"],
-		[215,"Mulgore"],
-		[1637,"Orgrimmar"],
-		[1377,"Silithus"],
-		[406,"Stonetalon Mountains"],
-		[440,"Tanaris"],
-		[141,"Teldrassil"],
-		[17,"The Barrens"],
-		[3557,"The Exodar"],
-		[400,"Thousand Needles"],
-		[1638,"Thunder Bluff"],
-		[1216,"Timbermaw Hold"],
-		[490,"Un'Goro Crater"],
-		[618,"Winterspring"]
+		[331, "Vallefresno"],
+		[16, "Azshara"],
+		[3524, "Isla Bruma Azur"],
+		[3525, "Isla Bruma de Sangre"],
+		[148, "Costa Oscura"],
+		[1657, "Darnassus"],
+		[405, "Desolace"],
+		[14, "Durotar"],
+		[15, "Marjal Revolcafango"],
+		[361, "Frondavil"],
+		[357, "Feralas"],
+		[493, "Claro de la Luna"],
+		[215, "Mulgore"],
+		[1637, "Orgrimmar"],
+		[1377, "Silithus"],
+		[406, "Sierra Espolón"],
+		[440, "Tanaris"],
+		[141, "Teldrassil"],
+		[17, "Los Baldíos"],
+		[3557, "El Exodar"],
+		[400, "Las Mil Agujas"],
+		[1638, "Cima del Trueno"],
+		[1216, "Bastión Fauces de Madera"],
+		[490, "Cráter de Un'Goro"],
+		[618, "Cuna del Invierno"]
 	]],
-	[8,"Outland",,[
-		[3522,"Blade's Edge Mountains"],
-		[3483,"Hellfire Peninsula"],
-		[3518,"Nagrand"],
-		[3523,"Netherstorm"],
-		[3520,"Shadowmoon Valley"],
-		[3703,"Shattrath City"],
-		[3679,"Skettis"],
-		[3519,"Terokkar Forest"],
-		[3521,"Zangarmarsh"]
+	[8,"Terrallende",,[
+		[3522, "Montañas Filospada"],
+	[3483, "Península del Fuego Infernal"],
+	[3518, "Nagrand"],
+	[3523, "Tormenta Abisal"],
+	[3520, "Valle Sombraluna"],
+	[3703, "Ciudad de Shattrath"],
+	[3679, "Skettis"],
+	[3519, "Bosque de Terokkar"],
+	[3521, "Marisma de Zangar"]
 	]],
-	[10,"Northrend",,[
-		[3537,"Borean Tundra"],
-		[4024,"Coldarra"],
-		[4395,"Dalaran"],
-		[65,"Dragonblight"],
-		[394,"Grizzly Hills"],
-		[495,"Howling Fjord"],
-		[210,"Icecrown"],
-		[3711,"Sholazar Basin"],
-		[67,"The Storm Peaks"],
-		[4197,"Wintergrasp"],
-		[66,"Zul'Drak"]
+	[10,"Rasganorte",,[
+		[3537, "Tundra Boreal"],
+		[4024, "Gelidar"],
+		[4395, "Dalaran"],
+		[65, "Cementerio de Dragones"],
+		[394, "Colinas Pardas"],
+		[495, "Fiordo Aquilonal"],
+		[210, "Corona de Hielo"],
+		[3711, "Cuenca de Sholazar"],
+		[67, "Las Cumbres Tormentosas"],
+		[4197, "Conquista del Invierno"],
+		[66, "Zul'Drak"]
 	]],
-	[2,"Dungeons",,[
-		[4494,"Ahn'kahet: The Old Kingdom"],
-		[3790,"Auchenai Crypts"],
-		[3477,"Azjol-Nerub"],
-		[719,"Blackfathom Deeps"],
-		[1584,"Blackrock Depths"],
-		[1583,"Blackrock Spire"],
-		[1941,"Caverns of Time"],
-		[3905,"Coilfang Reservoir"],
-		[2557,"Dire Maul"],
-		[4196,"Drak'Tharon Keep"],
-		[133,"Gnomeregan"],
-		[4375,"Gundrak"],
-		[4272,"Halls of Lightning"],
-		[4820,"Halls of Reflection"],
-		[4264,"Halls of Stone"],
-		[3535,"Hellfire Citadel"],
-		[3562,"Hellfire Ramparts"],
-		[4095,"Magisters' Terrace"],
-		[3792,"Mana-Tombs"],
-		[2100,"Maraudon"],
-		[2367,"Old Hillsbrad Foothills"],
-		[4813,"Pit of Saron"],
-		[2437,"Ragefire Chasm"],
-		[722,"Razorfen Downs"],
-		[491,"Razorfen Kraul"],
-		[796,"Scarlet Monastery"],
-		[2057,"Scholomance"],
-		[3791,"Sethekk Halls"],
-		[3789,"Shadow Labyrinth"],
-		[209,"Shadowfang Keep"],
-		[2017,"Stratholme"],
-		[1417,"Sunken Temple"],
-		[3845,"Tempest Keep"],
-		[3846,"The Arcatraz"],
-		[2366,"The Black Morass"],
-		[3713,"The Blood Furnace"],
-		[3847,"The Botanica"],
-		[4100,"The Culling of Stratholme"],
-		[1581,"The Deadmines"],
-		[4809,"The Forge of Souls"],
-		[3849,"The Mechanar"],
-		[4120,"The Nexus"],
-		[4228,"The Oculus"],
-		[3714,"The Shattered Halls"],
-		[3717,"The Slave Pens"],
-		[3715,"The Steamvault"],
-		[717,"The Stockade"],
-		[3716,"The Underbog"],
-		[4415,"The Violet Hold"],
-		[4723,"Trial of the Champion"],
-		[1337,"Uldaman"],
-		[206,"Utgarde Keep"],
-		[1196,"Utgarde Pinnacle"],
-		[718,"Wailing Caverns"],
-		[978,"Zul'Farrak"]
+	[2,"Mazmorras",,[
+		[4494, "Ahn'kahet: El Antiguo Reino"],
+		[3790, "Criptas Auchenai"],
+		[3477, "Azjol-Nerub"],
+		[719, "Brazanegra"],
+		[1584, "Profundidades de Roca Negra"],
+		[1583, "Roca Negra"],
+		[1941, "Cavernas del Tiempo"],
+		[3905, "Reserva Colmillo Torcido"],
+		[2557, "La masacre"],
+		[4196, "Fortaleza de Drak'Tharon"],
+		[133, "Gnomeregan"],
+		[4375, "Gundrak"],
+		[4272, "Cámaras de Relámpagos"],
+		[4820, "Cámaras de Reflexión"],
+		[4264, "Cámaras de Piedra"],
+		[3535, "Ciudadela del Fuego Infernal"],
+		[3562, "Murallas del Fuego Infernal"],
+		[4095, "El Bancal del Magister"],
+		[3792, "Tumbas de Maná"],
+		[2100, "Maraudon"],
+		[2367, "Antiguas Laderas Trabalomas"],
+		[4813, "Foso de Saron"],
+		[2437, "Sima Ígnea"],
+		[722, "Zahúrda Rajacieno"],
+		[491, "Horado Rajacieno"],
+		[796, "Monasterio Escarlata"],
+		[2057, "Scholomance"],
+		[3791, "Sethekk Halls"],
+		[3789, "Laberinto de las Sombras"],
+		[209, "Castillo de Colmillo Oscuro"],
+		[2017, "Stratholme"],
+		[1417, "Templo Sumergido"],
+		[3845, "Castillo de la Tempestad"],
+		[3846, "El Arcatraz"],
+		[2366, "La Ciénaga Negra"],
+		[3713, "El Horno de Sangre"],
+		[3847, "El Invernáculo"],
+		[4100, "La Matanza de Stratholme"],
+		[1581, "El Minas de la Muerte"],
+		[4809, "La Forja de Almas"],
+		[3849, "El Mechanar"],
+		[4120, "El Nexo"],
+		[4228, "El Oculus"],
+		[3714, "Las Salas Arrasadas"],
+		[3717, "Recinto de los Esclavos"],
+		[3715, "La Cámara de Vapor"],
+		[717, "Las Mazmorras"],
+		[3716, "La Sotiénaga"],
+		[4415, "El Bastión Violeta"],
+		[4723, "Prueba del Campeón"],
+		[1337, "Uldaman"],
+		[206, "Fortaleza de Utgarde"],
+		[1196, "Pináculo de Utgarde"],
+		[718, "Cuevas de los Lamentos"],
+		[978, "Zul'Farrak"]
 	]],
-	[3,"Raids",,[
-		[2677,"Blackwing Lair"],
-		[3606,"Hyjal Summit"],
-		[4812,"Icecrown Citadel"],
-		[2562,"Karazhan"],
-		[3836,"Magtheridon's Lair"],
-		[2717,"Molten Core"],
-		[3456,"Naxxramas"],
-		[2159,"Onyxia's Lair"],
-		[3429,"Ruins of Ahn'Qiraj"],
-		[4075,"Sunwell Plateau"],
-		[3428,"Temple of Ahn'Qiraj"],
-		[3840,"The Black Temple"],
-		[3842,"The Eye"],
-		[4500,"The Eye of Eternity"],
-		[4493,"The Obsidian Sanctum"],
-		[4722,"Trial of the Crusader"],
-		[4273,"Ulduar"],
-		[3805,"Zul'Aman"],
-		[19,"Zul'Gurub"]
+	[3,"Bandas",,[
+		[2677, "Guarida de Alanegra"],
+		[3606, "La Cima Hyjal"],
+		[4812, "Corona de Hielo"],
+		[2562, "Karazhan"],
+		[3836, "La Guarida de Magtheridon"],
+		[2717, "Núcleo de Magma"],
+		[3456, "Naxxramas"],
+		[2159, "Guarida de Onyxia"],
+		[3429, "Ruinas de Ahn'Qiraj"],
+		[4075, "Sunwell Plateau"],
+		[3428, "Templo de Ahn'Qiraj"],
+		[3840, "El Templo Negro"],
+		[3842, "El Ojo"],
+		[4500, "El Ojo de la Eternidad"],
+		[4493, "El Sagrario Obsidiana"],
+		[4722, "Prueba del Cruzado"],
+		[4273, "Ulduar"],
+		[3805, "Zul'Aman"],
+		[19, "Zul'Gurub"]
 	]],
-	[4,"Classes",,[
-		[-372,"Death Knight"],
-		[-263,"Druid"],
-		[-261,"Hunter"],
-		[-161,"Mage"],
-		[-141,"Paladin"],
-		[-262,"Priest"],
-		[-162,"Rogue"],
-		[-82,"Shaman"],
-		[-61,"Warlock"],
-		[-81,"Warrior"]
+    [4, "Clases", , [
+        [-61, "Brujo"],
+        [-372, "Caballero de la Muerte"],
+        [-261, "Cazador"],
+        [-82, "Chamán"],
+        [-263, "Druida"],
+        [-81, "Guerrero"],
+        [-161, "Mago"],
+        [-141, "Paladín"],
+        [-162, "Pícaro"],
+        [-262, "Sacerdote"]
 	]],
-	[5,"Professions",,[
-		[-181,"Alchemy"],
-		[-121,"Blacksmithing"],
-		[-304,"Cooking"],
-		[-201,"Engineering"],
-		[-324,"First Aid"],
-		[-101,"Fishing"],
-		[-24,"Herbalism"],
-		[-371,"Inscription"],
-		[-373,"Jewelcrafting"],
-		[-182,"Leatherworking"],
-		[-264,"Tailoring"]
+	    [5, "Profesiones", , [
+        [-181, "Alquimia"],
+        [-377, "Arqueología"],
+        [-304, "Cocina"],
+        [-24, "Herboristería"],
+        [-121, "Herrería"],
+        [-201, "Ingeniería"],
+        [-371, "Inscripción"],
+        [-373, "Joyería"],
+        [-182, "Peletería"],
+        [-101, "Pesca"],
+        [-324, "Primeros auxilios"],
+        [-264, "Sastrería"]
+    ]],
+	[6,"Campos de batalla",,[
+		[2597,"Valle de Alterac"],
+		[3358,"Cuenca de Arathi"],
+		[-25,"Campos de batalla"],
+		[3820,"Ojo de la Tormenta"],
+		[4710,"Isla de la Conquista"],
+		[4384,"Playa de los Ancestros"],
+		[3277,"Garganta grito de guerra"]
 	]],
-	[6,"Battlegrounds",,[
-		[2597,"Alterac Valley"],
-		[3358,"Arathi Basin"],
-		[-25,"Battlegrounds"],
-		[3820,"Eye of the Storm"],
-		[4710,"Isle of Conquest"],
-		[4384,"Strand of the Ancients"],
-		[3277,"Warsong Gulch"]
+	[9,"Eventos de Mundo",,[
+		[-370,"Fiesta de la cerveza"],
+		[-284,"Semana de los Niños"],
+		[-364,"Feria de la Luna Negra"],
+		[-41,"Día de los Muertos"],
+		[-22,"Halloween"],
+		[-22,"Festival de la cosecha"],
+		[-22,"Amor en el aire"],
+		[-22,"Festival Lunar"],
+		[-369,"Verano"],
+		[-22,"Año nuevo"],
+		[-375,"Generosidad"],
+		[-374,"Jardín Noble"],
+		[-22,"Festival de Invierno"]
 	]],
-	[9,"World Events",,[
-		[-370,"Brewfest"],
-		[-284,"Children's Week"],
-		[-364,"Darkmoon Faire"],
-		[-41,"Day of the Dead"],
-		[-22,"Hallow's End"],
-		[-22,"Harvest Festival"],
-		[-22,"Love is in the Air"],
-		[-22,"Lunar Festival"],
-		[-369,"Midsummer"],
-		[-22,"New Year's Eve"],
-		[-375,"Pilgrim's Bounty"],
-		[-374,"Noblegarden"],
-		[-22,"Winter Veil"]
-	]],
-	[7,"Miscellaneous",,[
+	[7, "Miscelánea", , [
+        [-1010, "Buscador de Mazmorras"],
+        [-1, "Épica"],
+        [-344, "Legendaria"],
+        [-241, "Torneo"],
 		[-365,"Ahn'Qiraj War Effort"],
-		[-1010,"Dungeon Finder"],
-		[-1,"Epic"],
-		[-344,"Legendary"],
-		[-367,"Reputation"],
-		[-368,"Scourge Invasion"],
-		[-241,"Tournament"]
+		[-367,"Reputación"],
+		[-368,"Invasión de la plaga"]
 	]],
-	[-2,"Uncategorized"]
+	[-2,"Sin categoría"]
 ];
 var mn_titles=[
-	[0,"General"],
-	[4,"Quests"],
-	[1,"Player vs. Player"],
-	[3,"Dungeons & Raids"],
-	[5,"Professions"],
-	[2,"Reputation"],
-	[6,"World Events"]
+	[0, "General"],
+    [4, "Misiones"],
+    [1, "Jugador contra Jugador"],
+    [3, "Mazmorras y bandas"],
+    [5, "Profesiones"],
+    [2, "Reputación"],
+    [6, "Eventos del mundo"]
 ];
 var mn_spells=[
-	[7,"Class Skills",,[
-		[6,"Death Knight",,[
-			[770,"Blood"],
-			[771,"Frost"],
-			[772,"Unholy"],
-			[776,"Runeforging"]
-		]],
-		[11,"Druid",,[
-			[574,"Balance"],
-			[134,"Feral Combat"],
-			[573,"Restoration"]
-		]],
-		[3,"Hunter",,[
-			[50,"Beast Mastery"],
-			[163,"Marksmanship"],
-			[51,"Survival"]
-		]],
-		[8,"Mage",,[
-			[237,"Arcane"],
-			[8,"Fire"],
-			[6,"Frost"]
-		]],
-		[2,"Paladin",,[
-			[594,"Holy"],
-			[267,"Protection"],
-			[184,"Retribution"]
-		]],
-		[5,"Priest",,[
-			[613,"Discipline"],
-			[56,"Holy"],
-			[78,"Shadow Magic"]
-		]],
-		[4,"Rogue",,[
-			[253,"Assassination"],
-			[38,"Combat"],
-			[633,"Lockpicking"],
-			[39,"Subtlety"]
-		]],
-		[7,"Shaman",,[
-			[375,"Elemental Combat"],
-			[373,"Enhancement"],
-			[374,"Restoration"]
-		]],
-		[9,"Warlock",,[
-			[355,"Affliction"],
-			[354,"Demonology"],
-			[593,"Destruction"]
-		]],
-		[1,"Warrior",,[
-			[26,"Arms"],
-			[256,"Fury"],
-			[257,"Protection"]
-		]]
-	]],
-	[-2,"Talents",,[
-		[6,"Death Knight",,[
-			[770,"Blood"],
-			[771,"Frost"],
-			[772,"Unholy"]
-		]],
-		[11,"Druid",,[
-			[574,"Balance"],
-			[134,"Feral Combat"],
-			[573,"Restoration"]
-		]],
-		[3,"Hunter",,[
-			[50,"Beast Mastery"],
-			[163,"Marksmanship"],
-			[51,"Survival"]
-		]],
-		[8,"Mage",,[
-			[237,"Arcane"],
-			[8,"Fire"],
-			[6,"Frost"]
-		]],
-		[2,"Paladin",,[
-			[594,"Holy"],
-			[267,"Protection"],
-			[184,"Retribution"]
-		]],
-		[5,"Priest",,[
-			[613,"Discipline"],
-			[56,"Holy"],
-			[78,"Shadow Magic"]
-		]],
-		[4,"Rogue",,[
-			[253,"Assassination"],
-			[38,"Combat"],
-			[39,"Subtlety"]
-		]],
-		[7,"Shaman",,[
-			[375,"Elemental Combat"],
-			[373,"Enhancement"],
-			[374,"Restoration"]
-		]],
-		[9,"Warlock",,[
-			[355,"Affliction"],
-			[354,"Demonology"],
-			[593,"Destruction"]
-		]],
-		[1,"Warrior",,[
-			[26,"Arms"],
-			[256,"Fury"],
-			[257,"Protection"]
-		]]
-	]],
-	[-3,"Pet Skills",,[
-		[,"Death Knight"],
-		[782,"Ghoul"],
-		[,"Hunter"],
-		[270,"Generic"],
-		[653,"Bat"],
-		[210,"Bear"],
-		[655,"Bird of Prey"],
-		[211,"Boar"],
-		[213,"Carrion Bird"],
-		[209,"Cat"],
-		[780,"Chimaera"],
-		[787,"Core Hound"],
-		[214,"Crab"],
-		[212,"Crocolisk"],
-		[781,"Devilsaur"],
-		[763,"Dragonhawk"],
-		[215,"Gorilla"],
-		[654,"Hyena"],
-		[775,"Moth"],
-		[764,"Nether Ray"],
-		[217,"Raptor"],
-		[767,"Ravager"],
-		[786,"Rhino"],
-		[236,"Scorpid"],
-		[768,"Serpent"],
-		[783,"Silithid"],
-		[203,"Spider"],
-		[788,"Spirit Beast"],
-		[765,"Sporebat"],
-		[218,"Tallstrider"],
-		[251,"Turtle"],
-		[766,"Warp Stalker"],
-		[785,"Wasp"],
-		[656,"Wind Serpent"],
-		[208,"Wolf"],
-		[784,"Worm"],
-		[,"Warlock"],
-		[761,"Felguard"],
-		[189,"Felhunter"],
-		[188,"Imp"],
-		[205,"Succubus"],
-		[204,"Voidwalker"]
-	]],
-	[-7,"Pet Talents"],
+    [, "Personaje"],
+    [7, "Habilidades", , [
+        [6, "Caballero de la muerte", , [
+            [770, "Sangre"],
+            [771, "Escarcha"],
+            [772, "Profano"],
+            [776, "Forja de runas"]
+        ]],
+        [11, "Druida", , [
+            [574, "Equilibrio"],
+            [134, "Feral"],
+            [573, "Restauración"]
+        ]],
+        [3, "Cazador", , [
+            [50, "Dominio de bestias"],
+            [163, "Puntería"],
+            [51, "Supervivencia"]
+        ]],
+        [8, "Mago", , [
+            [237, "Arcano"],
+            [8, "Fuego"],
+            [6, "Escarcha"]
+        ]],
+        [2, "Paladín", , [
+            [594, "Sagrado"],
+            [267, "Protección"],
+            [184, "Reprensión"]
+        ]],
+        [5, "Sacerdote", , [
+            [613, "Disciplina"],
+            [56, "Sagrado"],
+            [78, "Sombras"]
+        ]],
+        [4, "Pícaro", , [
+            [253, "Asesinato"],
+            [38, "Combate"],
+            [39, "Sutileza"]
+        ]],
+        [7, "Chamán", , [
+            [375, "Combate elemental"],
+            [373, "Mejora"],
+            [374, "Restauración"]
+        ]],
+        [9, "Brujo", , [
+            [355, "Aflicción"],
+            [354, "Demonología"],
+            [593, "Destrucción"]
+        ]],
+        [1, "Guerrero", , [
+            [26, "Armas"],
+            [256, "Furia"],
+            [257, "Protección"]
+        ]],
+    ]],
+	 [-2, "Talentos", , [
+        [6, "Caballero de la muerte", , [
+            [770, "Sangre"],
+            [771, "Escarcha"],
+            [772, "Profano"],
+        ]],
+        [11, "Druida", , [
+            [574, "Equilibrio"],
+            [134, "Feral"],
+            [573, "Restauración"]
+        ]],
+        [3, "Cazador", , [
+            [50, "Dominio de bestias"],
+            [163, "Puntería"],
+            [51, "Supervivencia"]
+        ]],
+        [8, "Mago", , [
+            [237, "Arcano"],
+            [8, "Fuego"],
+            [6, "Escarcha"]
+        ]],
+        [2, "Paladín", , [
+            [594, "Sagrado"],
+            [267, "Protección"],
+            [184, "Reprensión"]
+        ]],
+        [5, "Sacerdote", , [
+            [613, "Disciplina"],
+            [56, "Sagrado"],
+            [78, "Sombras"]
+        ]],
+        [4, "Pícaro", , [
+            [253, "Asesinato"],
+            [38, "Combate"],
+            [39, "Sutileza"]
+        ]],
+        [7, "Chamán", , [
+            [375, "Combate elemental"],
+            [373, "Mejora"],
+            [374, "Restauración"]
+        ]],
+        [9, "Brujo", , [
+            [355, "Aflicción"],
+            [354, "Demonología"],
+            [593, "Destrucción"]
+        ]],
+        [1, "Guerrero", , [
+            [26, "Armas"],
+            [256, "Furia"],
+            [257, "Protección"]
+        ]],
+    ]],
 	[11,"Professions",,[
 		[171,"Alchemy"],
 		[164,"Blacksmithing",,[
@@ -635,48 +591,101 @@ var mn_spells=[
 	//[-5,"Mounts"],
 	[-4,"Racial Traits"],
 	[6,"Weapon Skills"],
-	[0,"Uncategorized"]
+	[, "Mascotas"],
+	[-3,"Habilidades de mascota",,[
+		[,"Caballero de la Muerte"],
+		[782,"Necrófago"],
+		[,"Cazador"],
+		[270, "Genérico"],
+        [766, "Acechador deformado"],
+        [818, "Alfazaque"],
+        [203, "Araña"],
+        [817, "Araña de esquisto"],
+        [655, "Ave rapaz"],
+        [785, "Avispa"],
+        [788, "Bestia espíritu"],
+        [787, "Can del Núcleo"],
+        [214, "Cangrejo"],
+        [213, "Carroñero"],
+        [212, "Crocolisco"],
+        [781, "Demosaurio"],
+        [767, "Devastador"],
+        [763, "Dracohalcón"],
+        [236, "Escórpido"],
+        [765, "Esporiélago"],
+        [209, "Felino"],
+        [215, "Gorila"],
+        [784, "Gusano"],
+        [654, "Hiena"],
+        [211, "Jabalí"],
+        [208, "Lobo"],
+        [653, "Murciélago"],
+        [210, "Oso"],
+        [775, "Palomilla"],
+        [811, "Perro"],
+        [780, "Quimera"],
+        [217, "Raptor"],
+        [764, "Raya abisal"],
+        [786, "Rinoceronte"],
+        [768, "Serpiente"],
+        [656, "Serpiente alada"],
+        [783, "Silítido"],
+        [251, "Tortuga"],
+        [218, "Zancaalta"],
+		[,"Brujo"],
+		[761, "Guardia vil"],
+        [189, "Manáfago"],
+        [188, "Diablillo"],
+        [205, "Súcubo"],
+        [204, "Abisario"]
+	]],
+	[-7, "Talentos de mascotas", , [
+        [411, "Astucia"],
+        [410, "Ferocidad"],
+        [409, "Tenacidad"]
+    ]],
+	[0,"Sin Categoría"]
 ];
 var mn_zones=[
-	[0,"Eastern Kingdoms"],
+	[0,"Reinos del Este"],
 	[1,"Kalimdor"],
-	[8,"Outland"],
-	[10,"Northrend"],
-	[2,"Dungeons",,[
-		[0,"Classic"],
+	[8,"Terrallende"],
+	[10,"Rasaganorte"],
+	[2,"Mazmorras",,[
+		[0,"Clásicas"],
 		[1,"The Burning Crusade"],
 		[2,"Wrath of the Lich King"]
 	]],
-	[3,"Raids",,[
-		[0,"Classic"],
+	[3,"Bandas",,[
+		[0,"Clásicas"],
 		[1,"The Burning Crusade"],
 		[2,"Wrath of the Lich King"]
 	]],
-	[6,"Battlegrounds"],
+	[6,"Campos de Batalla"],
 	[9,"Arenas"]
 ];
 var mn_factions=[
-	[1118,"Classic",,[
-		[469,"Alliance"],
-		[891,"Alliance Forces"],
-		[67,"Horde"],
-		[892,"Horde Forces"],
-		[169,"Steamwheedle Cartel"]
-	]],
-	[980,"The Burning Crusade",,[
-		[936,"Shattrath City"]
-	]],
-	[1097,"Wrath of the Lich King",,[
-		[1037,"Alliance Vanguard"],
-		[1052,"Horde Expedition"],
-		[1117,"Sholazar Basin"]
-	]],
-	[0,"Other"]
+	[1118, "Clásicas", , [
+        [469, "Alianza"],
+        [169, "Cártel Bonvapor"],
+        [891, "Fuerzas de la Alianza"],
+        [892, "Fuerzas de la Horda"],
+        [67, "Horda"]
+    ]],
+	[980, "The Burning Crusade", , [
+        [936, "Ciudad de Shattrath"]
+    ]],
+	[1097, "Wrath of the Lich King", , [
+        [1117, "Cuenca de Sholazar"],
+        [1052, "Expedición de la Horda"],
+        [1037, "Vanguardia de la Alianza"]
+    ]],
+    [0, "Otros"]
 ];
 var mn_pets=[
-	[2,"Cunning"],
-	[0,"Ferocity"],
-	[1,"Tenacity"]
+	[2,"Astucia"],
+	[0,"Ferocidad"],
+	[1,"Tenacidad"]
 ];
 var mn_achievements=[
 	[92,"General"],
@@ -792,7 +801,7 @@ var mn_holidays=[
 ];
 var mn_database=[
 	[0,"Objetos","?items",mn_items],
-	[2,"Conjunto de objetos","?itemsets"/*,mn_itemSets*/],
+	[2,"Conjuntos de objetos","?itemsets"/*,mn_itemSets*/],
 	[4,"PNJs","?npcs",mn_npcs],
 	[3,"Misiones","?quests",mn_quests],
 	//[6,"Zones","?zones",mn_zones],
