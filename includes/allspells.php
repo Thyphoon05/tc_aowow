@@ -1,6 +1,5 @@
 <?php
 require_once('includes/allitems.php');
-$smarty->config_load($conf_file, 'spell');
 // Названия аур
 $spell_aura_names = array(
 	0 => 'None',
@@ -769,7 +768,7 @@ function render_spell_tooltip(&$row)
 		$x .= $row['manacost'].' mana<br />';
 
 	if($row['manacostpercent']>0)
-		$x .= $row['manacostpercent']."% of base mana<br />";
+		$x .= $row['manacostpercent']."".LOCALE_OF_MANA_BASE."</br>";
 
 	if($range && (($row['manacost'] >0) || ($row['manacostpercent']>0)))
 		$x .= '</td><th>';
@@ -788,13 +787,17 @@ function render_spell_tooltip(&$row)
 	elseif(isset($casttime))
 		$x .= $casttime.' sec cast';
 	elseif($row['spellcasttimesID'] == 1)
-		$x .= 'Instant';
+		$x .= LOCALE_INSTANT;
 
 	if(($row['ChannelInterruptFlags'] || isset($casttime) || $row['spellcasttimesID'] == 1) && $row['cooldown'])
 		$x .= '</td><th>';
 
-	if($row['cooldown'])
-		$x.= ($row['cooldown']/1000).' sec cooldown';
+	if(($row['cooldown'] < 60) and ($row['cooldown'] > 0))
+		$x.= ($row['cooldown']/1000).' '.LOCALE_SECONDS_CD;
+	elseif($row['cooldown'] > 60)
+		$x.= ($row['cooldown']/1000/60).' '.LOCALE_MINUTES_CD;
+	
+		
 
 	if(($row['ChannelInterruptFlags'] || isset($casttime) || $row['spellcasttimesID'] == 1) && $row['cooldown'])
 		$x .= '</th></tr></table>';
@@ -881,7 +884,7 @@ function allspellsinfo2(&$row, $level=0)
 
 function spell_buff_render($row)
 {
-	global $DB, $smarty;
+	global $DB;
 
 	$x = '<table><tr>';
 	
@@ -905,7 +908,7 @@ function spell_buff_render($row)
 	// Длительность баффа
 	$duration = $DB->selectCell("SELECT durationBase FROM ?_spellduration WHERE durationID=? LIMIT 1", $row['durationID']);
 	if($duration>0)
-		$x .= '<span class="q">'.($duration/1000).' '.$smarty->get_config_vars('Spells_seconds_remaining').'</span>';
+		$x .= '<span class="q">'.($duration/1000).' '.LOCALE_SECONDS_REMAINING.'</span>';
 	
 	$x .= '</td></tr></table>';
 	

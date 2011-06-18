@@ -182,7 +182,6 @@ function req_spell($spell_id)
 
 function spell_to_bonus($spell_id, $trigger, $charges, $ppmrate, $cooldown, $catcooldown)
 {
-	global $smarty;
 	$tooltip = spell_desc($spell_id);
 	if($tooltip == '_empty_')
 		return;
@@ -213,9 +212,9 @@ function spell_to_bonus($spell_id, $trigger, $charges, $ppmrate, $cooldown, $cat
 	if ($cooldown < $catcooldown)
 		$cooldown = $catcooldown;
 	if (($cooldown/1000) < 60 and ($cooldown > 0))
-		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . ($cooldown/1000) .' '.$smarty->get_config_vars('seconds').')';
+		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . ($cooldown/1000) .' '.LOCALE_SECONDS.')';
 	elseif (($cooldown/1000) > 60)
-		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . ($cooldown/1000/60) . ' '.$smarty->get_config_vars('minutes').')';
+		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . ($cooldown/1000/60) . ' '.LOCALE_MINUTES.')';
 		
 	if ($charges == -1)
 		$tooltip = $tooltip . ', ' . LOCALE_GBONUS_EXPENDABLE;

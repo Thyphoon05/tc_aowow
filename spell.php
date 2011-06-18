@@ -53,7 +53,7 @@ if(!$spell = load_cache(SPELL_PAGE, $cache_key))
 		if($row['manacost'])
 			$spell['manacost'] = $row['manacost'];
 		elseif($row['manacostpercent'])
-			$spell['manacost'] = $row['manacostpercent'].'% '.$smarty->get_config_vars('of_base');
+			$spell['manacost'] = $row['manacostpercent'].'% '.LOCALE_OF_MANA_BASE;
 		// Уровень спелла
 		$spell['level'] = $row['levelspell'];
 		// Дальность
@@ -66,7 +66,7 @@ if(!$spell = load_cache(SPELL_PAGE, $cache_key))
 		$spell['rangename'] = $RangeRow['name_loc'.$_SESSION['locale']];
 		// Время каста
 		if($row['basecasttime'] > 0)
-			$spell['casttime'] = ($row['basecasttime'] / 1000).' '.$smarty->get_config_vars('seconds');
+			$spell['casttime'] = ($row['basecasttime'] / 1000).' '.LOCALE_SECONDS;
 		else if($row['ChannelInterruptFlags'])
 			$spell['casttime'] = 'Channeled';
 		else
@@ -78,7 +78,7 @@ if(!$spell = load_cache(SPELL_PAGE, $cache_key))
 			
 		// Время действия спелла
 		if($row['durationBase'] > 0)
-			$spell['duration'] = ($row['durationBase'] / 1000).' '.$smarty->get_config_vars('seconds');
+			$spell['duration'] = ($row['durationBase'] / 1000).' '.LOCALE_SECONDS;
 		else
 			$spell['duration'] ='<span class="q0">n/a</span>';
 

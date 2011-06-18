@@ -28,7 +28,7 @@ switch($_SESSION['locale'])
 			'LOCALE_QUEST_HAS_POI'                 => 'Has points of interest',
 			'LOCALE_QUEST_HAS_START_SCRIPT'        => 'Has start script',
 			'LOCALE_QUEST_HAS_COMPLETE_SCRIPT'     => 'Has end script',
-			'LOCALE_QUEST_TYPE_GROUP'              => 'Gropo',
+			'LOCALE_QUEST_TYPE_GROUP'              => 'Grupo',
 			'LOCALE_QUEST_TYPE_LIFE'               => 'Life',
 			'LOCALE_QUEST_TYPE_PVP'                => 'PvP',
 			'LOCALE_QUEST_TYPE_RAID'               => 'Raid',
@@ -232,6 +232,14 @@ switch($_SESSION['locale'])
 			'LOCALE_HEROIC'			=>	' (Heroico)',
 			'LOCALE_CRITERIA'		=>	'Necesario',
 			'LOCALE_GLYPH_OF'		=>	'Glifo de ',
+			'LOCALE_SECONDS'		=>	' segundos.',
+			'LOCALE_MINUTES'		=>	' minutos.',
+			'LOCALE_SECONDS_REMAINING'		=>	' segundos restantes.',
+			'LOCALE_MINUTES_REMAINING'		=>	' minuto(s) restante(s).',
+			'LOCALE_OF_MANA_BASE'		=>	'% de maná base.',
+			'LOCALE_MINUTES_CD'		=>	' min. de reutilización.',
+			'LOCALE_SECONDS_CD'		=>	' seg. de reutilización.',
+			'LOCALE_INSTANT'		=>	' Instante.',
 		));
 		break;
 	// --- ENGLISH default LOCALE ---
@@ -464,6 +472,14 @@ switch($_SESSION['locale'])
 			'LOCALE_HEROIC'			=>	' (Heroic)',
 			'LOCALE_CRITERIA'		=>	'Criteria',
 			'LOCALE_GLYPH_OF'		=>	'Glyph of ',
+			'LOCALE_SECONDS'		=>	' seconds.',
+			'LOCALE_MINUTES'		=>	' minutes.',
+			'LOCALE_SECONDS_REMAINING'		=>	' seconds remaining.',
+			'LOCALE_MINUTES_REMAINING'		=>	' minute(s) remaining.',
+			'LOCALE_OF_MANA_BASE'		=>	'% of base mana.',
+			'LOCALE_MINUTES_CD'		=>	' min. cooldown.',
+			'LOCALE_SECONDS_CD'		=>	' sec. cooldown.',
+			'LOCALE_INSTANT'		=>	' Instant.',
 		));
 		break;
 }
