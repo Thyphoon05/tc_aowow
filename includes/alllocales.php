@@ -203,7 +203,7 @@ switch($_SESSION['locale'])
 			'LOCALE_GBONUS_USE'					=>	'Uso: ',
 			'LOCALE_GBONUS_CHARGES'					=>	'cargas',
 			'LOCALE_GBONUS_EXPENDABLE'					=>	'expendable',
-			'LOCALE_GBONUS_HIT_TAKEN_MELEE_RATING' =>	'Mejora tu índice de evación de golpes cuarpo a cuerpo %d.',
+			'LOCALE_GBONUS_HIT_TAKEN_MELEE_RATING' =>	'Mejora tu índice de evasión de golpes cuerpo a cuerpo %d.',
 			'LOCALE_COOLDOWN'					=>	'reutilización',
 			'LOCALE_COMBAT_RATING'				=>	'%s&nbsp;@&nbsp;L%d',
 			// sockets
@@ -444,6 +444,7 @@ switch($_SESSION['locale'])
 			'LOCALE_GBONUS_USE'					=>	'Use: ',
 			'LOCALE_GBONUS_CHARGES'					=>	'charges',
 			'LOCALE_GBONUS_EXPENDABLE'					=>	'expendable',
+			'LOCALE_GBONUS_HIT_TAKEN_MELEE_RATING' =>	'Improves melee hit avoidance rating by %d.',
 			'LOCALE_COOLDOWN'					=>	'cooldown',
 			'LOCALE_COMBAT_RATING'				=>	'%s&nbsp;@&nbsp;L%d',
 			// sockets
