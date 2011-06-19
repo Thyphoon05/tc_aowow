@@ -20,7 +20,7 @@ $AoWoWconf['characters']['pass']	= 'default';
 $AoWoWconf['characters']['db']		= 'characters';
 // -- Site Configuration --
 // Title of the website
-$AoWoWconf['aowow']['name'] = 'AoWoW';
+$AoWoWconf['aowow']['name'] = 'RWoWDB / AoWoW';
 // Skin, only 'wowhead' is supported currently
 $AoWoWconf['aowow']['template'] = 'wowhead';
 // Time to keep cache in seconds (Default: 1 week)
