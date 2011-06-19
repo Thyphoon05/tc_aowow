@@ -136,6 +136,7 @@ function b_type($type, $value, $level)
 		case 19: $green[] = green_bonus(LOCALE_GBONUS_MELEECRIT_RATING, $value, $type, $level);		return;
 		case 20: $green[] = green_bonus(LOCALE_GBONUS_RANGEDCRIT_RATING, $value, $type, $level);	return;
 		case 21: $green[] = green_bonus(LOCALE_GBONUS_SPELLCRIT_RATING, $value, $type, $level);		return;
+		case 22: $green[] = green_bonus(LOCALE_GBONUS_HIT_TAKEN_MELEE_RATING, $value, $type, $level);		return;
 
 		case 30: $green[] = green_bonus(LOCALE_GBONUS_SPELLHASTE_RATING, $value, $type, $level);	return;
 		case 31: $green[] = green_bonus(LOCALE_GBONUS_HIT_RATING, $value, $type, $level);			return;
@@ -147,7 +148,7 @@ function b_type($type, $value, $level)
 		case 43: $green[] = green_bonus(LOCALE_GBONUS_RESTOREMANA, $value);							return;
 		case 44: $green[] = green_bonus(LOCALE_GBONUS_ARMORPENETRATION, $value, $type, $level);		return;
 		case 45: $green[] = green_bonus(LOCALE_GBONUS_SPELLPOWER, $value);							return;
-		default: return;
+		default: $green[] = green_bonus(LOCALE_GBONUS_UNKNOWN, $type);
 	}
 }
 

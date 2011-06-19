@@ -1064,10 +1064,10 @@ var g_item_slots = {
     28: "Reliquia"
 };
 var g_item_classes={
-	5:"Reagent",
-	10:"Currency",
-	12:"Quest",
-	13:"Key"
+	5:"Componente",
+	10:"Moneda",
+	12:"Misión",
+	13:"Llave"
 };
 var g_item_subclasses={
 	0:{
