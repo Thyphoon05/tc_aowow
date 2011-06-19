@@ -137,7 +137,9 @@ function b_type($type, $value, $level)
 		case 20: $green[] = green_bonus(LOCALE_GBONUS_RANGEDCRIT_RATING, $value, $type, $level);	return;
 		case 21: $green[] = green_bonus(LOCALE_GBONUS_SPELLCRIT_RATING, $value, $type, $level);		return;
 		case 22: $green[] = green_bonus(LOCALE_GBONUS_HIT_TAKEN_MELEE_RATING, $value, $type, $level);		return;
-
+		case 24: $green[] = green_bonus(LOCALE_GBONUS_HIT_TAKEN_SPELL_RATING, $value, $type, $level);		return;
+		case 28: $green[] = green_bonus(LOCALE_GBONUS_HASTE_MELEE_RATING, $value, $type, $level);		return;
+		
 		case 30: $green[] = green_bonus(LOCALE_GBONUS_SPELLHASTE_RATING, $value, $type, $level);	return;
 		case 31: $green[] = green_bonus(LOCALE_GBONUS_HIT_RATING, $value, $type, $level);			return;
 		case 32: $green[] = green_bonus(LOCALE_GBONUS_CRIT_RATING, $value, $type, $level);			return;
@@ -145,6 +147,7 @@ function b_type($type, $value, $level)
 		case 36: $green[] = green_bonus(LOCALE_GBONUS_HASTE_RATING, $value, $type, $level);			return;
 		case 37: $green[] = green_bonus(LOCALE_GBONUS_EXPERTISE_RATING, $value, $type, $level);		return;
 		case 38: $green[] = green_bonus(LOCALE_GBONUS_ATTACKPOWER, $value);							return;
+		case 39: $green[] = green_bonus(LOCALE_GBONUS_RANGED_ATTACK_POWER, $value);							return;
 		case 43: $green[] = green_bonus(LOCALE_GBONUS_RESTOREMANA, $value);							return;
 		case 44: $green[] = green_bonus(LOCALE_GBONUS_ARMORPENETRATION, $value, $type, $level);		return;
 		case 45: $green[] = green_bonus(LOCALE_GBONUS_SPELLPOWER, $value);							return;
@@ -212,10 +215,10 @@ function spell_to_bonus($spell_id, $trigger, $charges, $ppmrate, $cooldown, $cat
 
 	if ($cooldown < $catcooldown)
 		$cooldown = $catcooldown;
-	if (($cooldown/1000) < 60 and ($cooldown > 0))
+	if (($cooldown/1000) < 61 and ($cooldown > 0))
 		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . ($cooldown/1000) .' '.LOCALE_SECONDS.')';
-	elseif (($cooldown/1000) > 60)
-		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . ($cooldown/1000/60) . ' '.LOCALE_MINUTES.')';
+	elseif (($cooldown/1000) > 61)
+		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . round($cooldown/60000, 1) . ' '.LOCALE_MINUTES.')';
 		
 	if ($charges == -1)
 		$tooltip = $tooltip . ', ' . LOCALE_GBONUS_EXPENDABLE;
