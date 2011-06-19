@@ -2457,7 +2457,7 @@ var LANG={
 	tooltip_gotopage:"Click to go to a specific page",
 	tooltip_honorpoints:"Honor Points",
 	tooltip_itemnotfound:"Item not found :(",
-	tooltip_loading:"Loading...",
+	tooltip_loading:"Cargando...",
 	tooltip_lmwhtfy:'<b class="q">LMWHTFY</b><br />Get a LMWHTFY.com link to this search.',
 	tooltip_lvheader1:"Click to sort",
 	tooltip_lvheader2:"Right-click to filter",

@@ -643,7 +643,7 @@ function g_urlize(a, b) {
 }
 function g_getLocale(a) {
 	if (a && g_locale.id == 25) {
-		return 0
+		return 6
 	}
 	return g_locale.id
 }
@@ -950,11 +950,7 @@ function g_getLocaleFromDomain(a) {
 	return (c[a] ? c[a] : 0)
 }
 g_getLocaleFromDomain.L = {
-	fr: 2,
-	de: 3,
-	es: 6,
-	ru: 7,
-	ptr: 25
+	es: 6
 };
 function g_getDomainFromLocale(a) {
 	var b;
@@ -1436,8 +1432,8 @@ var Tooltip = {
 };
 var g_dev = false;
 var g_locale = {
-	id: 0,
-	name: "enus"
+	id: 6,
+	name: "eses"
 };
 var g_localTime = new Date();
 var g_user = {
@@ -1464,11 +1460,7 @@ var g_types = {
 };
 var g_locales = {
 	0 : "enus",
-	2 : "frfr",
-	3 : "dede",
-	6 : "eses",
-	8 : "ruru",
-	25 : "ptr"
+	6 : "eses"
 };
 var g_file_races = {
 	10 : "bloodelf",
@@ -1919,14 +1911,14 @@ function () {
 	};
 	K()
 	
-	var g_locale = { id: 0, name: 'enus' };
+	var g_locale = { id: 6, name: 'eses' };
 	var _head = document.getElementsByTagName('head') [0];
 	var _link = document.createElement('link');
 	var _script = document.createElement('script');
 	_link.rel = "stylesheet";
 	_link.setAttribute("type","text/css");
 	_link.href = "http://localhost/tc_aowow/templates/wowhead/css/power.css";
-	_script.setAttribute("src","http://localhost/tc_aowow/templates/wowhead/js/locale_enus.js");
+	_script.setAttribute("src","http://localhost/tc_aowow/templates/wowhead/js/locale_eses.js");
 	_script.setAttribute("type","text/javascript");
 	
 	_head.appendChild(_link);
