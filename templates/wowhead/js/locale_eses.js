@@ -749,16 +749,16 @@ var mn_achievements=[
 	[81,"Feats of Strength"]
 ];
 var mn_talentCalc=[
-	[6,"Death Knight","?talent#j"],
-	[11,"Druid","?talent#0"],
-	[3,"Hunter","?talent#c"],
-	[8,"Mage","?talent#o"],
-	[2,"Paladin","?talent#s"],
-	[5,"Priest","?talent#b"],
-	[4,"Rogue","?talent#f"],
-	[7,"Shaman","?talent#h"],
-	[9,"Warlock","?talent#I"],
-	[1,"Warrior","?talent#L"]
+	[6,"Caballero de la Muerte","?talent#j"],
+	[11,"Druida","?talent#0"],
+	[3,"Cazador","?talent#c"],
+	[8,"Mago","?talent#o"],
+	[2,"Paladín","?talent#s"],
+	[5,"Sacerdote","?talent#b"],
+	[4,"Pícaro","?talent#f"],
+	[7,"Chaman","?talent#h"],
+	[9,"Brujo","?talent#I"],
+	[1,"Guerrero","?talent#L"]
 ];
 var mn_petCalc=[
 	[24,"Bat","?petcalc#MR"],
@@ -2739,6 +2739,7 @@ var LANG={
         healthrgn: ["Regeneración de salud", "VC5", "VC5"],
         hitrtng: ["Índice de golpe", "Golpe", "Golpe"],
         holres: ["Resistencia a lo Sagrado", "Resist. a lo sag.", "RDiv"],
+        holsplpwr: ["Poder con hechizos sagrados", "P. sagrados", "PSag"],
         holsplpwr: ["Poder con hechizos sagrados", "P. sagrados", "PSag"],
         "int": ["Intellecto", "Int", "Int"],
         level: ["Nivel", "Nivel", "Niv"],

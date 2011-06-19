@@ -1,8 +1,8 @@
 /*
 global.css version 278 (09.07.2009)
 Differences from origin:
-  1. http://static.wowhead.com/images/    ->    http://loldb.landoflegends.de/images/                (104)
-  2. http://www.wowhead.com/favicon.gif    ->    http://loldb.landoflegends.de/images/favicon.gif    (1)
+  1. http://static.wowhead.com/images/    ->    http://localhost/tc_aowow/images/                (104)
+  2. http://www.wowhead.com/favicon.gif    ->    http://localhost/tc_aowow/images/favicon.gif    (1)
 */
 .q {
     color: #ffd100 !important;
@@ -115,7 +115,7 @@ Differences from origin:
 }
 
 .tooltip td,.tooltip th {
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/tooltip.png);
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/tooltip.png);
     font-family: Verdana, sans-serif;
     font-size: 12px;
     line-height: 17px;
@@ -183,27 +183,27 @@ Differences from origin:
 
 .socket-meta {
     padding-left: 26px;
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/socket_meta.gif) no-repeat left center;
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/socket_meta.gif) no-repeat left center;
 }
 
 .socket-red {
     padding-left: 26px;
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/socket_red.gif) no-repeat left center;
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/socket_red.gif) no-repeat left center;
 }
 
 .socket-yellow {
     padding-left: 26px;
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/socket_yellow.gif) no-repeat left center;
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/socket_yellow.gif) no-repeat left center;
 }
 
 .socket-blue {
     padding-left: 26px;
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/socket_blue.gif) no-repeat left center;
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/socket_blue.gif) no-repeat left center;
 }
 
 .socket-prismatic {
     padding-left: 26px;
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/socket_prismatic.gif) no-repeat left center;
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/socket_prismatic.gif) no-repeat left center;
 }
 
 
@@ -258,7 +258,7 @@ Differences from origin:
 
 .iconsmall-socket-meta-empty ins,.iconsmall-socket-yellow-empty ins,.iconsmall-socket-red-empty ins,.iconsmall-socket-blue-empty ins,.iconsmall-socket-prismatic-empty ins
     {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_background.jpg);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_background.jpg);
 }
 
 .iconsmall-socket-red-empty ins {
@@ -271,7 +271,7 @@ Differences from origin:
 
 .iconmedium-socket-meta-empty ins,.iconmedium-socket-yellow-empty ins,.iconmedium-socket-red-empty ins,.iconmedium-socket-blue-empty ins,.iconmedium-socket-prismatic-empty ins
     {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_background.jpg);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_background.jpg);
 }
 
 .iconmedium-socket-blue-empty ins {
@@ -290,44 +290,44 @@ Differences from origin:
 }
 
 .iconsmall-socket-meta var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_anim_meta.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_anim_meta.gif);
 }
 
 .iconsmall-socket-yellow var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_anim_yellow.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_anim_yellow.gif);
 }
 
 .iconsmall-socket-red var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_anim_red.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_anim_red.gif);
 }
 
 .iconsmall-socket-blue var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_anim_blue.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_anim_blue.gif);
 }
 
 .iconsmall-socket-prismatic var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_anim_prismatic.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_anim_prismatic.gif);
 }
 
 .iconmedium-socket-meta var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_anim_meta.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_anim_meta.gif);
 }
 
 .iconmedium-socket-yellow var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_anim_yellow.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_anim_yellow.gif);
 }
 
 .iconmedium-socket-red var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_anim_red.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_anim_red.gif);
 }
 
 .iconmedium-socket-blue var {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_anim_blue.gif);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_anim_blue.gif);
 }
 
 .iconmedium-socket-prismatic var {
     background-image:
-        url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_anim_prismatic.gif);
+        url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_anim_prismatic.gif);
 }
 
 .iconsmall del,.iconmedium del,.iconlarge del {
@@ -342,93 +342,93 @@ Differences from origin:
 .iconsmall del {
     width: 26px;
     height: 26px;
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/icon_border_small.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/icon_border_small.png);
 }
 
 .iconlarge del {
     width: 68px;
     height: 68px;
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/icon_border_large.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/icon_border_large.png);
 }
 
 .iconsmall-socket-meta del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_meta1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_meta1.png);
 }
 
 .iconsmall-socket-meta-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_meta0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_meta0.png);
 }
 
 .iconsmall-socket-red del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_red1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_red1.png);
 }
 
 .iconsmall-socket-red-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_red0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_red0.png);
 }
 
 .iconsmall-socket-yellow del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_yellow1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_yellow1.png);
 }
 
 .iconsmall-socket-yellow-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_yellow0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_yellow0.png);
 }
 
 .iconsmall-socket-blue del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_blue1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_blue1.png);
 }
 
 .iconsmall-socket-blue-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_blue0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_blue0.png);
 }
 
 .iconsmall-socket-prismatic del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_prismatic1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_prismatic1.png);
 }
 
 .iconsmall-socket-prismatic-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/socket_prismatic0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/socket_prismatic0.png);
 }
 
 .iconmedium-socket-meta del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_meta1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_meta1.png);
 }
 
 .iconmedium-socket-meta-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_meta0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_meta0.png);
 }
 
 .iconmedium-socket-red del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_red1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_red1.png);
 }
 
 .iconmedium-socket-red-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_red0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_red0.png);
 }
 
 .iconmedium-socket-yellow del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_yellow1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_yellow1.png);
 }
 
 .iconmedium-socket-yellow-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_yellow0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_yellow0.png);
 }
 
 .iconmedium-socket-blue del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_blue1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_blue1.png);
 }
 
 .iconmedium-socket-blue-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_blue0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_blue0.png);
 }
 
 .iconmedium-socket-prismatic del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_prismatic1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_prismatic1.png);
 }
 
 .iconmedium-socket-prismatic-empty del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/socket_prismatic0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/socket_prismatic0.png);
 }
 
 .iconsmall a,.iconmedium a,.iconlarge a {
@@ -442,39 +442,39 @@ Differences from origin:
 .iconsmall a {
     width: 20px;
     height: 20px;
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/icon_hilite_small.png) no-repeat 20px 0;
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/icon_hilite_small.png) no-repeat 20px 0;
 }
 
 .iconmedium a {
     width: 38px;
     height: 38px;
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/icon_hilite_medium_new.png) no-repeat 38px 0;
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/icon_hilite_medium_new.png) no-repeat 38px 0;
 }
 
 .iconlarge a {
     width: 62px;
     height: 62px;
-    background: url(http://loldb.landoflegends.de/templates/wowhead/images/icon_hilite_large.png) no-repeat 62px 0;
+    background: url(http://localhost/tc_aowow/templates/wowhead/images/icon_hilite_large.png) no-repeat 62px 0;
 }
 
 .iconsmall-socket-meta a,.iconsmall-socket-red a,.iconsmall-socket-yellow a,.iconsmall-socket-blue a,.iconsmall-socket-prismatic a
     {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/icon_hilite_socket1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/icon_hilite_socket1.png);
 }
 
 .iconsmall-socket-meta-empty a,.iconsmall-socket-red-empty a,.iconsmall-socket-yellow-empty a,.iconsmall-socket-blue-empty a,.iconsmall-socket-prismatic-empty a
     {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/small/icon_hilite_socket0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/small/icon_hilite_socket0.png);
 }
 
 .iconmedium-socket-meta a,.iconmedium-socket-red a,.iconmedium-socket-yellow a,.iconmedium-socket-blue a,.iconmedium-socket-prismatic a
     {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/icon_hilite_socket1.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/icon_hilite_socket1.png);
 }
 
 .iconmedium-socket-meta-empty a,.iconmedium-socket-red-empty a,.iconmedium-socket-yellow-empty a,.iconmedium-socket-blue-empty a,.iconmedium-socket-prismatic-empty a
     {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/sockets/medium/icon_hilite_socket0.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/sockets/medium/icon_hilite_socket0.png);
 }
 
 .iconsmall .glow,.iconmedium .glow,.iconlarge .glow {
@@ -500,7 +500,7 @@ Differences from origin:
 }
 
 .iconmedium-gold del {
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/icon_border_medium_gold.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/icon_border_medium_gold.png);
 }
 
 .iconmedium-gold a {
@@ -525,7 +525,7 @@ Differences from origin:
 .iconmedium del,.tooltip p div {
     width: 44px;
     height: 44px;
-    background-image: url(http://loldb.landoflegends.de/templates/wowhead/images/icon_border_medium.png);
+    background-image: url(http://localhost/tc_aowow/templates/wowhead/images/icon_border_medium.png);
 }
 
 .iconsmall,.iconsmall var {
