@@ -1432,6 +1432,8 @@ var Tooltip = {
 };
 var g_dev = false;
 var g_locale = {
+	id: 0,
+	name: "eses",
 	id: 6,
 	name: "eses"
 };

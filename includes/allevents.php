@@ -41,7 +41,7 @@ function event_find($conditions = NULL)
 				$result[$eventEntry]['creatures_quests_id'][] = array(
 					'creature' => $row['id'],
 					'quest' => $row['quest']
-				);
+					);
 			}
 		return $result;
 	}
@@ -64,7 +64,7 @@ function event_name($events)
 		FROM game_event
 		WHERE eventEntry IN (?a)',
 		$entries
-	);
+		);
 
 	// Merge original array with new information
 	$result = array();
@@ -96,7 +96,7 @@ function event_infoline($events)
 		FROM game_event
 		WHERE eventEntry IN (?a)',
 		$entries
-	);
+		);
 
 	// Merge original array with new information
 	$result = array();
@@ -112,7 +112,7 @@ function event_infoline($events)
 				$row,
 				event_startend($row['gen_start'], $row['gen_end'], $row['occurence'], $row['length']),
 				array('id' => $row['eventEntry'])  // used in event_table template
-			);
+				);
 	}
 
 	return $result;
@@ -170,7 +170,7 @@ function event_startend($gen_start, $gen_end, $occurence, $length)
 		'nextstarttime' => date($datelong, $next_start),
 		'nextendtime' => date($datelong, $next_end),
 		'today' => (($start < $now + 24*60*60) && ($now < $end + 24*60*60)) ? 1 : 0
-	);
+		);
 }
 
 ?>

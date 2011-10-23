@@ -907,9 +907,15 @@ function spell_buff_render($row)
 	
 	// Длительность баффа
 	$duration = $DB->selectCell("SELECT durationBase FROM ?_spellduration WHERE durationID=? LIMIT 1", $row['durationID']);
-	if($duration>0)
+	if(($duration/1000) < 60 && $duration > 1)
 		$x .= '<span class="q">'.($duration/1000).' '.LOCALE_SECONDS_REMAINING.'</span>';
-	
+	elseif(($duration/1000) > 60)
+		$x .= '<span class="q">'.($duration/60000).' '.LOCALE_MINUTES_REMAINING.'</span>';
+	elseif(($duration/1000) == 60)
+		$x .= '<span class="q">'.($duration/60000).' '.LOCALE_MINUTE_REMAINING.'</span>';
+		elseif(($duration/1000) == 1)
+		$x .= '<span class="q">'.($duration/1000).' '.LOCALE_SECOND_REMAINING.'</span>';
+		
 	$x .= '</td></tr></table>';
 	
 	return $x;

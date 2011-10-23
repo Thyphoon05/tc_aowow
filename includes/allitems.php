@@ -215,15 +215,19 @@ function spell_to_bonus($spell_id, $trigger, $charges, $ppmrate, $cooldown, $cat
 
 	if ($cooldown < $catcooldown)
 		$cooldown = $catcooldown;
-	if (($cooldown/1000) < 61 and ($cooldown > 0))
-		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . ($cooldown/1000) .' '.LOCALE_SECONDS.')';
-	elseif (($cooldown/1000) > 61)
+	if (($cooldown/1000) < 60 && $cooldown > 1)
+		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . round($cooldown/1000,1) .' '.LOCALE_SECONDS.')';
+	elseif (($cooldown/1000) > 60)
 		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . round($cooldown/60000, 1) . ' '.LOCALE_MINUTES.')';
+	elseif (($cooldown/1000) == 1)
+		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . $cooldown/1000 .' '.LOCALE_SECOND.')';
+	elseif (($cooldown/1000) == 60)
+		$tooltip = $tooltip . ' (' . LOCALE_COOLDOWN . ' ' . $cooldown/60000 . ' '.LOCALE_MINUTE.')';
 		
 	if ($charges == -1)
-		$tooltip = $tooltip . ', ' . LOCALE_GBONUS_EXPENDABLE;
+		$tooltip = $tooltip . ' </br>' . LOCALE_GBONUS_EXPENDABLE;
 	elseif ($charges < 0)
-		$tooltip = $tooltip . ', ' . (-$charges) . ' ' . LOCALE_GBONUS_CHARGES . ', ' . LOCALE_GBONUS_EXPENDABLE;
+		$tooltip = $tooltip . '</br> ' . (-$charges) . ' ' . LOCALE_GBONUS_CHARGES . ' </br>' . LOCALE_GBONUS_EXPENDABLE;
 	elseif ($charges > 0)
 		$tooltip = $tooltip . ', ' . $charges . ' ' . LOCALE_GBONUS_CHARGES;
 	return $tooltip;
@@ -488,7 +492,7 @@ function render_item_tooltip(&$Row)
 			$x .= '<span class="q">"'.localizedName($Row, 'description').'"</span>';
 	}
 	if($Row['PageText'])
-		$x .= '<br /><span class="q2">&lt;Right Click To Read&gt;</span>'; // TODO: locale
+		$x .= '<br /><span class="q2">&lt;Click derecho para leer&gt;</span>'; // TODO: locale
 
 	// Item Set
 	// Временное хранилище всех вещей;

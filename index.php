@@ -1,7 +1,5 @@
 <?php
-// Настройка шаблонизатора и ДБ
 include('includes/kernel.php');
-
 if(isset($_COOKIE['remember_me']) && !isset($_SESSION['username']))
 {
 	$_SESSION['username'] = substr($_COOKIE['remember_me'], 0, strlen($_COOKIE['remember_me'])-40);

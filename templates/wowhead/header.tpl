@@ -29,7 +29,7 @@
 				<div class="clear"></div>
 			</div>
 		</div>
-		<div id="topbar-right"><div><form action="."><a href="javascript:;"></a><input name="search" size="35" value="" id="oh2345v5ks" /></form></div></div>
+		<div id="topbar-right"><div><form action="."><a href="javascript:;"></a><input name="search" size="30" value="" id="oh2345v5ks" /></form></div></div>
 		<div id="topbar"><span id="kbl34h6b43" class="menu-buttons"></span><div class="clear"></div></div>
 		{strip}<script type="text/javascript">
 			g_initHeader({$page.tab});

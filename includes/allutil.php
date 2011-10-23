@@ -1,12 +1,9 @@
 ﻿<?php
 define('AOWOW_REVISION', 12);
-
-/* ================ LOADING ================ */
 require_once('configs/config.php');
 error_reporting(2039);
 ini_set('serialize_precision', 4);
 session_start();
-
 // Префикс
 $tableprefix = $AoWoWconf['mangos']['aowow'];
 

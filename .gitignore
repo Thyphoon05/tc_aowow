@@ -1,7 +1,9 @@
 configs/config.php
-/images/icons
-/images/maps
-/images/tmp
-/images/talent
+images/icons/*
+images/maps/*
+images/tmp/*
+images/talent/*
+cache/*
 *.aww
 *.tpl.php
+.idea/*

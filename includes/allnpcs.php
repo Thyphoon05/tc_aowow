@@ -23,13 +23,13 @@ function creatureinfo2 ( $Row )
             $rank = ' (Elite)';
             break;
         case 2:
-            $rank = ' (Rar Elite)';
+            $rank = ' (Elite-Raro)';
             break;
         case 3:
-            $rank = ' (Boss)';
+            $rank = ' (Jefe)';
             break;
         case 4:
-            $rank = ' (Rar)';
+            $rank = ' (Raro)';
             break;
         default:
             $rank = '';
@@ -57,7 +57,7 @@ function creatureinfo2 ( $Row )
             $type = 'Untoter';
             break;
         case 7:
-            $type = 'Humanoid';
+            $type = 'Humanoide';
             break;
         case 8:
             $type = 'Tier';
@@ -73,7 +73,7 @@ function creatureinfo2 ( $Row )
             break;
     }
     
-    $x .= "Level {$level} {$type}{$rank}";
+    $x .= "Nivel {$level} {$type}{$rank}";
     $x .= "</td></tr></table>";
     
     $creature ['tooltip'] = $x;
