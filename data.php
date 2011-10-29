@@ -165,7 +165,7 @@ switch($_GET['data'])
 			if(!$im)
 				exit;
 
-			imagetograyscale($im);
+			@imagetograyscale($im);
 			imagejpeg($im, 'cache/images/'.$iconname.'.jpg');
 			imagejpeg($im);
 			save_cache(TALENT_ICON, $iconname, $iconname);

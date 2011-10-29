@@ -5,9 +5,33 @@ switch($_SESSION['locale'])
 	// --- SPANISH LOCALE ---
 	case '6':
 		mass_define(array(
+			// objects
+			'LOCALE_OBJECTYPE_BOOK' => 'Libro',
+			'LOCALE_OBJECTYPE_CONTAINER' => 'Contenedor',
+			'LOCALE_OBJECTYPE_COFFER' => 'Cofre',
+			'LOCALE_OBJECTYPE_HERB' => 'Hierba',
+			'LOCALE_OBJECTYPE_ORE' => 'Vena de mineral',
+			'LOCALE_OBJECTYPE_QUEST' => 'Misión',
+			// npc
+			'LOCALE_NPCRANK_ELITE' => '(Elite)',
+			'LOCALE_NPCRANK_RAREELITE' => '(Elite-Raro)',
+			'LOCALE_NPCRANK_BOSS' => '(Jefe)',
+			'LOCALE_NPCRANK_RARE' => '(Raro)',
+			'LOCALE_NPCTYPE_BEAST' => 'Bestia',
+			'LOCALE_NPCTYPE_DRAGONKIN' => 'Dragonante',
+			'LOCALE_NPCTYPE_DEMON' => 'Demonio',
+			'LOCALE_NPCTYPE_ELEMENTAL' => 'Elemental',
+			'LOCALE_NPCTYPE_GIANT' => 'Gigante',
+			'LOCALE_NPCTYPE_UNDEAD' => 'No-muerto',
+			'LOCALE_NPCTYPE_HUMANOID' => 'Humanoide',
+			'LOCALE_NPCTYPE_CRITTER' => 'Alimaña',
+			'LOCALE_NPCTYPE_MECHANIC' => 'Mecanico',
+			'LOCALE_NPCTYPE_UNCATEGORIZED' => 'Sin categoria',
+			// player/other
 			'LOCALE_NAME'	=> 'nombre',
 			'LOCALE_CLASS'	=> 'clase',
 			'LOCALE_RACE'	=> 'raza',
+			'LOCALE_LVL'	=> 'Nivel',
 			// quest
 			'LOCALE_REQUIREMENTS'	=>	'Requerimientos',
 			'LOCALE_QUEST_FLAGS_STAY_ALIVE'        => 'Requiere estar vivo',
@@ -253,9 +277,33 @@ switch($_SESSION['locale'])
 	// --- ENGLISH default LOCALE ---
 	default:
 		mass_define(array(
+			// objects
+			'LOCALE_OBJECTYPE_BOOK' => 'Book',
+			'LOCALE_OBJECTYPE_CONTAINER' => 'Container',
+			'LOCALE_OBJECTYPE_COFFER' => 'Footlocked',
+			'LOCALE_OBJECTYPE_HERB' => 'Herbs',
+			'LOCALE_OBJECTYPE_ORE' => 'Mineral Veins',
+			'LOCALE_OBJECTYPE_QUEST' => 'Quest',
+			// npc
+			'LOCALE_NPCRANK_ELITE' => '(Elite)',
+			'LOCALE_NPCRANK_RAREELITE' => '(Rare-Elite)',
+			'LOCALE_NPCRANK_BOSS' => '(Boss)',
+			'LOCALE_NPCRANK_RARE' => '(Rare)',
+			'LOCALE_NPCTYPE_BEAST' => 'Beast',
+			'LOCALE_NPCTYPE_DRAGONKIN' => 'Dragonkin',
+			'LOCALE_NPCTYPE_DEMON' => 'Demon',
+			'LOCALE_NPCTYPE_ELEMENTAL' => 'Elemental',
+			'LOCALE_NPCTYPE_GIANT' => 'Giant',
+			'LOCALE_NPCTYPE_UNDEAD' => 'Undead',
+			'LOCALE_NPCTYPE_HUMANOID' => 'Humanoid',
+			'LOCALE_NPCTYPE_CRITTER' => 'Critter',
+			'LOCALE_NPCTYPE_MECHANIC' => 'Mechanic',
+			'LOCALE_NPCTYPE_UNCATEGORIZED' => 'Uncategorized',
+			// player/other
 			'LOCALE_NAME'	=> 'name',
 			'LOCALE_CLASS'	=> 'class',
 			'LOCALE_RACE'	=> 'race',
+			'LOCALE_LVL'	=> 'Level',
 			// quest
 			'LOCALE_REQUIREMENTS'	=>	'Requirements',
 			'LOCALE_QUEST_FLAGS_STAY_ALIVE'        => 'Requires to stay alive',

@@ -950,6 +950,7 @@ function g_getLocaleFromDomain(a) {
 	return (c[a] ? c[a] : 0)
 }
 g_getLocaleFromDomain.L = {
+	en: 0,
 	es: 6
 };
 function g_getDomainFromLocale(a) {

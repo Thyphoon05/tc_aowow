@@ -480,22 +480,22 @@ function objectinfo2(&$Row, $level=0)
     switch ( $object ['type'] )
     {
         case 9:
-            $type = "Buch";
+            $type = LOCALE_OBJECTYPE_BOOK;
             break;
         case 3:
-            $type = "Behälter";
+            $type = LOCALE_OBJECTYPE_CONTAINER;
             break;
         case 5:
-            $type = "Schließkiste";
+            $type = LOCALE_OBJECTYPE_COFFER;
             break;
         case 3:
-            $type = "Kräuter";
+            $type = LOCALE_OBJECTYPE_HERB;
             break;
         case 4:
-            $type = "Erzvorkommen";
+            $type = LOCALE_OBJECTYPE_ORE;
             break;
         case 2:
-            $type = "Quest";
+            $type = LOCALE_OBJECTYPE_QUEST;
             break;
         default:
             $type = '';
