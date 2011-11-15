@@ -232,9 +232,10 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 		foreach($classes as $i => $class)
 			if (intval(-$quest['SkillOrClassMask'])==$i)
 				$s[] = $class;
-		if (count($s) == 0) $s[] = "UNKNOWN";
-		// Требуемый класс, что бы получить квест
-		$quest['reqclass'] = implode(", ", $s);
+						
+		if (!count($s) == 0) 
+			// Требуемый класс, что бы получить квест
+			$quest['reqclass'] = implode(", ", $s);
 	}
 
 	// Требуемые отношения с фракциями, что бы начать квест
