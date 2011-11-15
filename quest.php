@@ -230,7 +230,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 	{
 		$s = array();
 		foreach($classes as $i => $class)
-			if (intval(-$quest['SkillOrClassMask']) & (1<<$i))
+			if (intval(-$quest['SkillOrClassMask'])==$i)
 				$s[] = $class;
 		if (count($s) == 0) $s[] = "UNKNOWN";
 		// Требуемый класс, что бы получить квест
