@@ -372,13 +372,12 @@ CREATE TABLE `aowow_itemset` (
 -- Spell.dbc
 DROP TABLE IF EXISTS `aowow_spell`;
 CREATE TABLE `aowow_spell` (
-  `spellID` mediumint(11) unsigned NOT NULL,
+  `resistancesID` mediumint(11) unsigned NOT NULL,
   `category` mediumint(11) unsigned NOT NULL,
   `dispeltypeID` mediumint(11) unsigned NOT NULL,
   `mechanicID` mediumint(11) unsigned NOT NULL,
   `spellcasttimesID` mediumint(11) unsigned NOT NULL,
   `cooldown` int(11) unsigned NOT NULL,
-  `categoryCooldown` int(11) unsigned NOT NULL,
   `AuraInterruptFlags` int(11) unsigned NOT NULL,
   `ChannelInterruptFlags` int(11) unsigned NOT NULL, 
   `procChance` mediumint(11) unsigned NOT NULL,
@@ -459,7 +458,6 @@ CREATE TABLE `aowow_spell` (
   `dmg_multiplier1` float NOT NULL,
   `dmg_multiplier2` float NOT NULL,
   `dmg_multiplier3` float NOT NULL,
-  `schoolMask` int(11) NOT NULL,
   PRIMARY KEY  (`spellID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Spells';
 
