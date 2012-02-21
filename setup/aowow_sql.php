@@ -372,8 +372,8 @@ CREATE TABLE `aowow_itemset` (
 -- Spell.dbc
 DROP TABLE IF EXISTS `aowow_spell`;
 CREATE TABLE `aowow_spell` (
+  `spellID` mediumint(11) unsigned NOT NULL,
   `resistancesID` mediumint(11) unsigned NOT NULL,
-  `category` mediumint(11) unsigned NOT NULL,
   `dispeltypeID` mediumint(11) unsigned NOT NULL,
   `mechanicID` mediumint(11) unsigned NOT NULL,
   `spellcasttimesID` mediumint(11) unsigned NOT NULL,
