@@ -7,3 +7,4 @@ cache/*
 *.aww
 *.tpl.php
 .idea/*
+setup2/*

@@ -65,18 +65,38 @@
     @ob_end_flush();
   }
 
+  function saveimage($mapimage, $filename, $overwrite)
+  {
+    global $normaldir, $zoomdir, $blpmapwidth, $blpmapheight;
+    if ($overwrite || !file_exists($normaldir . $filename))
+    {
+      $imgnormal = imagecreatetruecolor(488,325);
+      imagecopyresampled($imgnormal, $mapimage, 0,0, 0,0, 488,325, $blpmapwidth,$blpmapheight);
+      imagejpeg($imgnormal, $normaldir . $filename);
+      imagedestroy($imgnormal);
+    }
+    if ($overwrite || !file_exists($zoomdir . $filename))
+    {
+      $imgzoom = imagecreatetruecolor(772,515);
+      imagecopyresampled($imgzoom, $mapimage, 0,0, 0,0, 772,515, $blpmapwidth,$blpmapheight);
+      imagejpeg($imgzoom, $zoomdir . $filename);
+      imagedestroy($imgzoom);
+    }
+  }
+
   status("Reading subzones list...");
-  $dbc = dbc2array_("WorldMapOverlay.dbc", "nixxxxxxsiiiixxxx");
+  $dbc = dbc2array_("WorldMapOverlay.dbc", "niixxxxxsiiiixxxx");
   $wmo = array();
   foreach ($dbc as $row)
-    if ($row[2])
+    if ($row[3])
       $wmo[$row[1]][] = array
       (
-        "name"   => strtolower($row[2]),
-        "width"  => $row[3],
-        "height" => $row[4],
-        "left"   => $row[5],
-        "top"    => $row[6]
+        "areaid" => $row[2],
+        "name"   => strtolower($row[3]),
+        "width"  => $row[4],
+        "height" => $row[5],
+        "left"   => $row[6],
+        "top"    => $row[7]
       );
   status(count($dbc) . "\n");
 
@@ -125,7 +145,7 @@
 
       if (isset($wmo[$zid]))
       {
-        foreach ($wmo[$zid] as $row)
+        foreach ($wmo[$zid] as &$row)
         {
           $i = 1; $y = 0;
           while($y < $row["height"])
@@ -135,6 +155,23 @@
             {
               $img = imagecreatefromblp($worldmapdir . $mapname . "/" . $row["name"] . $i . ".blp");
               imagecopy($mapfg, $img, $row["left"]+$x, $row["top"]+$y, 0, 0, imagesx($img), imagesy($img));
+
+              if (!isset($row["maskimage"]))
+              {
+                $mapmask = imagecreatetruecolor($row["width"], $row["height"]);
+                imagesavealpha($mapmask, true);
+                imagealphablending($mapmask, false);
+                $bgmaskcolor = imagecolorallocatealpha($mapmask, 0, 0, 0, 127);
+                imagefilledrectangle($mapmask, 0, 0, imagesx($mapmask)-1, imagesy($mapmask)-1, $bgmaskcolor);
+                imagecolordeallocate($mapmask, $bgmaskcolor);
+                $row["maskimage"] = $mapmask;
+                $row["maskcolor"] = imagecolorallocatealpha($mapmask, 255, 64, 192, 64);
+              }
+              for ($my = 0; $my < imagesy($img); $my++)
+                for ($mx = 0; $mx < imagesx($img); $mx++)
+                  if ((imagecolorat($img, $mx, $my)>>24) < 30)
+                    imagesetpixel($row["maskimage"], $x+$mx, $y+$my, $row["maskcolor"]);
+
               imagedestroy($img);
               $x += 256;
               $i++;
@@ -166,27 +203,23 @@
       //imagepng($mapfg, $mapid . "_fg.png");
       //imagejpeg($map, $mapid . ".jpg");
       //imagepng($map, $mapid . ".png");
-      for ($y = 0; $y < imagesy($mapfg); $y++)
-        for ($x = 0; $x < imagesx($mapfg); $x++)
-        {
-          $c = imagecolorat($mapfg, $x, $y);
-          if (($c>>24) < 127 && ($c>>24) > 0)
-          {
-            $c &= 0xFFFFFF;
-            imagesetpixel($mapfg, $x, $y, $c);
-          }
-        }
-      imagecopy($map, $mapfg, 0, 0, 0, 0, imagesx($mapfg), imagesy($mapfg));
+      imagecolortransparent($mapfg, imagecolorat($mapfg, imagesx($mapfg)-1, imagesy($mapfg)-1));
+      imagecopymerge($map, $mapfg, 0, 0, 0, 0, imagesx($mapfg), imagesy($mapfg), 100);
       imagedestroy($mapfg);
 
-      $imgnew = imagecreatetruecolor(488,325);
-      imagecopyresampled($imgnew, $map, 0,0, 0,0, 488,325, $blpmapwidth,$blpmapheight);
-      imagejpeg($imgnew, $normaldir . $mapid . ".jpg");
-      imagedestroy($imgnew);
-      $imgnew = imagecreatetruecolor(772,515);
-      imagecopyresampled($imgnew, $map, 0,0, 0,0, 772,515, $blpmapwidth,$blpmapheight);
-      imagejpeg($imgnew, $zoomdir . $mapid . ".jpg");
-      imagedestroy($imgnew);
+      saveimage($map, $mapid . ".jpg", true);
+
+      if (isset($wmo[$zid]))
+      {
+        foreach ($wmo[$zid] as &$row)
+        {
+          $zonemap = imagecreatetruecolor(1024, 768);
+          imagecopy($zonemap, $map, 0, 0, 0, 0, imagesx($map), imagesy($map));
+          imagecopy($zonemap, $row["maskimage"], $row["left"], $row["top"], 0, 0, imagesx($row["maskimage"]), imagesy($row["maskimage"]));
+          saveimage($zonemap, $row["areaid"] . ".jpg", false);
+          imagedestroy($zonemap);
+        }
+      }
 
       imagedestroy($map);
 

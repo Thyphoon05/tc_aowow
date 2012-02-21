@@ -1,6 +1,6 @@
 Order Deny,Allow
 <FilesMatch "\.(conf|php|tpl|in)$">
-	Deny from all
+	Allow from all
 </FilesMatch>
 <FilesMatch "^(index|ajax|opensearch).php$">
 	Allow from all

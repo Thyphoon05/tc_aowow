@@ -107,6 +107,9 @@ switch($razdel)
 	case 'objects':
 		include 'objects.php';
 		break;
+	case 'zone':
+		include 'zone.php';
+		break;
 	case 'quest':
 		include 'quest.php';
 		break;
