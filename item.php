@@ -727,7 +727,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 3,
 	'typeid' => $item['entry'],
-	'path' => path(0, 0, $item['classs'], $item['subclass'], $item['type'])
+	'path' => path(0, 0, $item['class'], $item['subclass'], $item['type'])
 );
 $smarty->assign('page', $page);
 
