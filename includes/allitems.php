@@ -151,6 +151,10 @@ function b_type($type, $value, $level)
 		case 43: $green[] = green_bonus(LOCALE_GBONUS_RESTOREMANA, $value);							return;
 		case 44: $green[] = green_bonus(LOCALE_GBONUS_ARMORPENETRATION, $value, $type, $level);		return;
 		case 45: $green[] = green_bonus(LOCALE_GBONUS_SPELLPOWER, $value);							return;
+		case 46: $green[] = green_bonus(LOCALE_GBONUS_HEALTHREGEN, $value);							return;
+		case 47: $green[] = green_bonus(LOCALE_GBONUS_SPELLPENETRATION, $value);							return;
+		case 48: $green[] = green_bonus(LOCALE_GBONUS_BLOCK, $value);							return;
+
 		default: $green[] = green_bonus(LOCALE_GBONUS_UNKNOWN, $type);
 	}
 }
