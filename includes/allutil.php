@@ -469,8 +469,10 @@ $cache_types = array(
 	array('achievement_page',	false			),
 	array('achievement_tooltip',false			),
 	array('achievement_listing',false			),
-
+	
 	array('glyphs',				false			),
+
+	array('search',				false			),
 );
 foreach($cache_types as $id => $cType)
 {

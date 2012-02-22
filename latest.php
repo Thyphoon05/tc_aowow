@@ -40,7 +40,7 @@ switch($_GET['latest'])
 					$comments[$i]['subject'] = $DB->selectCell('SELECT spellname_loc'.$_SESSION['locale'].' FROM ?_spell WHERE spellID=?d LIMIT 1', $row['typeID']);
 					break;
 				case 7: // Zone
-					// TODO
+					$comments[$i]['subject'] = $DB->selectCell('SELECT name_loc'.$_SESSION['locale'].' FROM ?_zones WHERE areatableID=?d LIMIT 1', $row['typeID']);
 					break;
 				case 8: // Faction
 					$comments[$i]['subject'] = $DB->selectCell('SELECT name_loc'.$_SESSION['locale'].' FROM ?_factions WHERE factionID=?d LIMIT 1', $row['typeID']);
