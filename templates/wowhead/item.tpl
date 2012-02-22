@@ -42,6 +42,24 @@
 				</table>
 
 				<div class="text">
+					{strip}
+					<a href="javascript:;" class="button-red" onclick="this.blur(); g_getIngameLink(
+						{if $item.quality==0}
+							'ff9d9d9d',
+						{elseif $item.quality==1}
+							'ffffffff',
+						{elseif $item.quality==2}
+							'ff1eff00',
+						{elseif $item.quality==3}
+							'ff0070dd',
+						{elseif $item.quality==4}
+							'ffa335ee',
+						{else}
+							'ffff8000',
+						{/if}
+						'item:{$item.entry}:0:0:0:0:0:0:0:0', '{$item.name|replace:'"':'\\\\&quot;'}')">
+					<em><b><i>Link</i></b><span>Link</span></em></a>
+					{/strip}
 
 					<a href="http://es.wowhead.com/?{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
 					<h1>{$item.name}</h1>

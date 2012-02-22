@@ -1392,7 +1392,7 @@ g_getIdFromTypeName.L = {
 	profile: 100
 };
 function g_getIngameLink(a, c, b) {
-	prompt(LANG.prompt_ingamelink, '/script DEFAULT_CHAT_FRAME:AddMessage("' + sprintf(LANG.message_ingamelink, "\\124c" + a + "\\124H" + c + "\\124h[" + b + ']\\124h\\124r");'))
+	prompt(LANG.prompt_ingamelink, '/script DEFAULT_CHAT_FRAME:AddMessage("\\124c'+a+"\\124H"+c+"\\124h["+b+']\\124h\\124r");')
 }
 function g_isEmailValid(a) {
 	return a.match(/^([a-z0-9._-]+)(\+[a-z0-9._-]+)?(@[a-z0-9.-]+\.[a-z]{2,4})$/i) != null
