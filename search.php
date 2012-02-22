@@ -24,7 +24,7 @@ global $allspells;
 global $npc_cols;
 global $spell_cols;
 
-$cache_key = cache_key(md5($search));
+$cache_key = cache_key(md5(strtolower($search)));
 
 // Массив всего найденного
 
