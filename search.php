@@ -41,6 +41,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 				SELECT entry
 				FROM locales_item
 				WHERE name_loc?d LIKE ?
+				LIMIT '.$AoWoWconf['limit'].'
 			',
 			$_SESSION['locale'],
 			$nsearch
@@ -55,6 +56,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 			WHERE
 				(i.name LIKE ? {OR i.entry IN (?a)})
 				AND a.id = i.displayid;
+			LIMIT '.$AoWoWconf['limit'].'
 		',
 		$item_cols[3],
 		($m)? $_SESSION['locale']: DBSIMPLE_SKIP,
@@ -76,6 +78,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 				WHERE
 					name_loc?d LIKE ?
 					OR subname_loc?d LIKE ?
+				LIMIT '.$AoWoWconf['limit'].'
 			',
 			$_SESSION['locale'], $nsearch,
 			$_SESSION['locale'], $nsearch
@@ -92,6 +95,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 				OR subname LIKE ?
 				{OR c.entry IN (?a)})
 				AND factiontemplateID=faction_A
+			LIMIT '.$AoWoWconf['limit'].'
 		',
 		$npc_cols[0],
 		($m)? $_SESSION['locale']: DBSIMPLE_SKIP,
@@ -111,6 +115,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 				FROM locales_gameobject
 				WHERE
 					name_loc?d LIKE ?
+				LIMIT '.$AoWoWconf['limit'].'
 			',
 			$_SESSION['locale'], $nsearch
 		);
@@ -121,6 +126,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 			FROM gameobject_template g
 				{LEFT JOIN (locales_gameobject l) ON l.entry=g.entry AND ?d}
 			WHERE name LIKE ? {OR g.entry IN (?a)}
+			LIMIT '.$AoWoWconf['limit'].'
 		',
 		$object_cols[0],
 		($m)? $_SESSION['locale']: DBSIMPLE_SKIP,
@@ -140,6 +146,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 				FROM locales_quest
 				WHERE
 					Title_loc?d LIKE ?
+				LIMIT '.$AoWoWconf['limit'].'
 			',
 			$_SESSION['locale'], $nsearch
 		);
@@ -157,6 +164,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 			AND q.Title NOT LIKE '<TEST>%'
 			AND q.Title NOT LIKE '<TXT>%'
 			AND q.Title NOT LIKE '<UNUSED%'
+			LIMIT ".$AoWoWconf['limit']."
 		",
 		($m)? $_SESSION['locale']: DBSIMPLE_SKIP,
 		($m)? 1: DBSIMPLE_SKIP,
@@ -172,6 +180,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 			SELECT *
 			FROM ?_itemset
 			WHERE name_loc'.$_SESSION['locale'].' LIKE ?
+			LIMIT '.$AoWoWconf['limit'].'
 		',
 		$nsearch
 	);
@@ -185,6 +194,7 @@ if(!$found = load_cache(SEARCH, $cache_key))
 			WHERE
 				s.spellname_loc'.$_SESSION['locale'].' like ?
 				AND i.id = s.spellicon
+			LIMIT '.$AoWoWconf['limit'].'
 		',
 		$spell_cols[2],
 		$nsearch
