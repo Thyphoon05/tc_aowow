@@ -241,7 +241,7 @@ var mn_quests=[ // De Google translate también :P
 		[1497, "Entrañas"],
 		[28, "Tierras de la Peste del Oeste"],
 		[40, "Páramos de Poniente"],
-		[11, "Los humedales"]
+		[11, "Los Humedales"]
 	]],
 	[1,"Kalimdor",,[
 		[331, "Vallefresno"],
@@ -721,7 +721,7 @@ var mn_achievements=[
         [171, "Pesca"],
         [172, "Primeros auxilios"]
 	]],
-	[201,"Reputation",,[
+	[201,"Reputación",,[
 		[14864,"Classic"],
 		[14865,"The Burning Crusade"],
 		[14866,"Wrath of the Lich King"]
@@ -738,7 +738,7 @@ var mn_achievements=[
         [156, "Festival de Invierno"],
         [14941, "Torneo Argenta"]
     ]],
-	[81,"Feats of Strength"]
+	[81,"Proezas de fuerza"]
 ];
 var mn_talentCalc=[
 	[6,"Caballero de la Muerte","?talent#j"],
