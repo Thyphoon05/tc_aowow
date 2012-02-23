@@ -5,6 +5,7 @@
   2. http://www.wowhead.com/favicon.gif	->	../images/favicon.gif	(1)
 */
 body {
+    background:url(../../../images/background.jpg) center top no-repeat;
 	background-color: black;
 	margin: 0;
 	padding: 0;
@@ -320,7 +321,6 @@ a.selected,a.selected:hover {
 #toptabs {
 	text-align: left;
 	white-space: nowrap;
-	background: url(../images/header-lines.gif) right bottom repeat-x;
 }
 
 #toptabs dl {
@@ -396,6 +396,7 @@ a.selected,a.selected:hover {
 
 #toptabs-inner {
 	padding-top: 105px;
+    backgroud-color: none;
 }
 
 #toptabs-right {
@@ -594,7 +595,7 @@ a#toptabs-menu-language {
 
 .toplinks {
 	color: #bbb;
-	padding-top: 3px;
+	padding-top: 15px;
 	position: absolute;
 	height: 20px;
 	top: 2px;
@@ -2593,7 +2594,7 @@ a:hover,a.open,.text b,.text ol li div,.text li div,.infobox li div,.minibox h3 
 .home-search form {
 	display: block;
 	position: relative;
-	width: 425px;
+	width: 390px;
 	margin: 0 auto;
 }
 

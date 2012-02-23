@@ -3,7 +3,6 @@
 <head>
 {include file='head.tpl'}
 </head>
-
 <body>
 <div id="layers"></div>
 <!--[if lte IE 6]><table id="ie6layout"><tr><th class="ie6layout-th"></th><td id="ie6layout-td"><div id="ie6layout-div"></div><![endif]-->
@@ -14,13 +13,11 @@
 			<h1>{$page.Title|escape:"html"}</h1>
 		</div>
 	</div>
-
 		<div id="wrapper" class="nosidebar">
 		<div id="toptabs">
 			<div id="toptabs-inner">
 				<div id="toptabs-right">
-					<div id="toplinks" class="toplinks">
-						{if $user}<a href="?user={$user.name}">{$user.name}</a>|<a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a>{/if}
+					<div id="toplinks" class="toplinks">{if $user}<a href="?user={$user.name}">{$user.name}</a>|<a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a>{/if}
 						|<a href="javascript:;" id="toptabs-menu-language">{#Language#} <small>&#9660;</small></a>
 						<script type="text/javascript">g_initHeaderMenus()</script>
 					</div>

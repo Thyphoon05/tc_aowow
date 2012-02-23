@@ -3,8 +3,9 @@
 	{include file='head.tpl'}
 	<style type="text/css">
 {literal}
+        .top { margin-left: auto; margin-right: auto; max-width: 1240px; min-width: 998px; }
 		.menu-buttons a { border-color: black }
-		.news { position: relative; text-align: left; width: 415px; height: 191px; margin: 30px auto 0 auto; background: url(templates/wowhead/images/{/literal}{$language}{literal}/mainpage-bg-news.jpg) no-repeat }
+		.news { position: relative; text-align: left; width: 415px; height: 191px; margin: 30px auto 0 auto; background: url(templates/wowhead/images/{/literal}{$language}{literal}/mainpage-bg-news.png) no-repeat }
 		.news-list { padding: 26px 0 0 26px; margin: 0 }
 		.news-list li { line-height: 2em }
 		.news-img1 { position: absolute; left: 60px; top: 155px; width: 172px; height: 17px }
@@ -15,6 +16,12 @@
 </head>
 <body>
 	<div id="layers"></div>
+    <div class="top">
+     <div id="toplinks" class="toplinks">{if $user}<a href="?user={$user.name}">{$user.name}</a>|<a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a>{/if}
+        |<a href="javascript:;" id="toptabs-menu-language">{#Language#} <small>&#9660;</small></a>
+       <script type="text/javascript">g_initHeaderMenus()</script>
+     </div>
+    </div>
 	<div id="home">
 		<h1>{$title}</h1>
 		<span id="h43jv6jk346" class="menu-buttons"></span>
@@ -44,11 +51,7 @@
 		</div>
 {/if}
 		
-		<div id="toplinks" class="toplinks">
-			{if $user}<a href="?user={$user.name}">{$user.name}</a>|<a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a>{/if}
-			|<a href="javascript:;" id="toptabs-menu-language">{#Language#} <small>&#9660;</small></a>
-			<script type="text/javascript">g_initHeaderMenus()</script>
-		</div>
+
 	</div>
 	
 	<div id="footer">
