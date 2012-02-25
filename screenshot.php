@@ -1,6 +1,7 @@
 <?php
 define ("MAX_SIZE","1024"); // TODO: Put in config.
 require_once('includes/allutil.php');
+require_once('includes/allscreenshots.php');
 
 switch($_REQUEST['screenshot'])
 {

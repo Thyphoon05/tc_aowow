@@ -122,15 +122,6 @@ $sides = array(
 	3 => LOCALE_BOTH_FACTIONS
 );
 
-// TODO: Get Extension from data and not from name :\
-function getExtension($str) {
-         $i = strrpos($str,".");
-         if (!$i) { return ""; }
-         $l = strlen($str) - $i;
-         $ext = substr($str,$i+1,$l);
-         return $ext;
-};
-
 // TODO: добавить форму преобразования секунд в строку времени
 function sec_to_time($secs)
 {

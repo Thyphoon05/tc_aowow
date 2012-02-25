@@ -2,6 +2,15 @@
 
 require_once('includes/game.php');
 
+// TODO: Get Extension from data and not from name :\
+function getExtension($str) {
+         $i = strrpos($str,".");
+         if (!$i) { return ""; }
+         $l = strlen($str) - $i;
+         $ext = substr($str,$i+1,$l);
+         return $ext;
+};
+
 function getscreenshots($type, $typeid)
 {
 	global $DB;
