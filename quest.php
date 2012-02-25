@@ -7,7 +7,7 @@ require_once('includes/allnpcs.php');
 require_once('includes/allcomments.php');
 require_once('includes/allachievements.php');
 require_once('includes/allevents.php');
-
+require_once('includes/allscreenshots.php');
 $smarty->config_load($conf_file, 'quest');
 
 // Номер квеста
@@ -581,6 +581,7 @@ $smarty->assign('page', $page);
 
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
+$smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
 // Данные о квесте
 $smarty->assign('quest', $quest);

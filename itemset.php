@@ -2,6 +2,7 @@
 require_once('includes/allitems.php');
 require_once('includes/allspells.php');
 require_once('includes/allcomments.php');
+require_once('includes/allscreenshots.php');
 
 $smarty->config_load($conf_file, 'itemset');
 
@@ -78,6 +79,7 @@ $smarty->assign('page', $page);
 
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
+$smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
 // --Передаем данные шаблонизатору--
 // Количество MySQL запросов

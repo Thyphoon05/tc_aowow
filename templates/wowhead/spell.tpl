@@ -7,6 +7,7 @@
 
 		<script type="text/javascript">
 			{include file='bricks/allcomments.tpl'}
+			{include file='bricks/allscreenshots.tpl'}
 			var g_pageInfo = {ldelim}type: {$page.type}, typeId: {$page.typeid}, name: '{$spell.name|escape:"javascript"}'{rdelim};
 			g_initPath({$page.path});
 		</script>
@@ -192,6 +193,7 @@ var tabsRelated = new Tabs({ldelim}parent: ge('tabs-generic'){rdelim});
 {if isset($spell.seealso)}{include				file='bricks/spell_table.tpl'			id='see-also-ability'	tabsid='tabsRelated' data=$spell.seealso			name='seealso'		}{/if}
 {if isset($spell.criteria_of)}{include 			file='bricks/achievement_table.tpl' 	id='criteria-of'		tabsid='tabsRelated' data=$spell.criteria_of		name='criteriaof'	}{/if}
 new Listview({ldelim}template: 'comment', id: 'comments', name: LANG.tab_comments, tabs: tabsRelated, parent: 'listview-generic', data: lv_comments{rdelim});
+new Listview({ldelim}template: 'screenshot', id: 'screenshots', name: LANG.tab_screenshots, tabs: tabsRelated, parent: 'listview-generic', data: lv_screenshots{rdelim});
 tabsRelated.flush();
 </script>
 		{include file='bricks/contribute.tpl'}

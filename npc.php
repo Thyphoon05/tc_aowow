@@ -4,6 +4,7 @@ require_once('includes/allspells.php');
 require_once('includes/allquests.php');
 require_once('includes/allnpcs.php');
 require_once('includes/allcomments.php');
+require_once('includes/allscreenshots.php');
 require_once('includes/allachievements.php');
 require_once('includes/allevents.php');
 
@@ -443,7 +444,11 @@ $smarty->assign('page', $page);
 
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
+$smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
+if($_GET['error']==2){
+$smarty->assign('screenshot_error', $smarty->get_config_vars('Error2'));
+};
 $smarty->assign('npc', $npc);
 
 // Количество MySQL запросов

@@ -4,6 +4,7 @@ require_once('includes/allspells.php');
 require_once('includes/allnpcs.php');
 require_once('includes/allquests.php');
 require_once('includes/allcomments.php');
+require_once('includes/allscreenshots.php');
 require_once('includes/allachievements.php');
 
 $smarty->config_load($conf_file, 'spell');
@@ -582,6 +583,7 @@ $smarty->assign('page', $page);
 
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
+$smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
