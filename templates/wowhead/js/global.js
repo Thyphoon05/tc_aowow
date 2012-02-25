@@ -1477,7 +1477,7 @@ function ss_appendSticky() {
             return rf2(a)
         };
         var f = ce("img"), e = Math.min(150 / c.width, 150 / c.height);
-        f.src = "http://static.wowhead.com/uploads/screenshots/thumb/" + c.id + ".jpg";
+        f.src = "images/screenshots/thumb/" + c.body.replace("gif","jpg").replace("png","jpg");
         f.className = "border";
         ae(l, f);
         ae(m, l);
@@ -6121,7 +6121,7 @@ Listview.templates = {faction: {sort: [1],nItemsPerPage: -1,searchable: 1,filtra
             q.href = "#screenshots:id=" + k.id;
             q.onclick = rf2;
             var v = ce("img"), t = Math.min(150 / k.width, 150 / k.height);
-            v.src = "http://static.wowhead.com/uploads/screenshots/thumb/" + k.id + ".jpg";
+            v.src = "images/screenshots/thumb/" + k.body.replace("gif","jpg").replace("png","jpg");
             ae(q, v);
             ae(e, q);
             var p = ce("div");
@@ -8000,7 +8000,7 @@ function() {
         b.style.visibility = "hidden";
         var C = z[k], I = (C.width > 772 || C.height > 618);
         g(0);
-        var E = (C.url ? C.url : "http://static.wowhead.com/uploads/screenshots/" + (I ? "resized/" : "normal/") + C.id + ".jpg");
+        var E = (C.url ? C.url : "images/screenshots/" + (I ? "normal/" : "normal/") + C.body);
         var J = '<img src="' + E + '" width="' + e + '" height="' + y + '"';
         if (Browser.ie6) {
             J += ' galleryimg="no"'
@@ -8011,7 +8011,7 @@ function() {
             if (C.url) {
                 h.href = E
             } else {
-                h.href = "http://static.wowhead.com/uploads/screenshots/normal/" + C.id + ".jpg"
+                h.href = "images/screenshots/normal/" + C.body;
             }
             if (!C.user && typeof g_pageInfo == "object") {
                 C.user = g_pageInfo.username
@@ -8044,9 +8044,9 @@ function() {
                 P.style.display = "none"
             }
             v.style.display = (L || K ? "" : "none");
-            if (g_getLocale(true) != 0 && C.caption) {
+            /*if (g_getLocale(true) != 0 && C.caption) {
                 C.caption = ""
-            }
+            }*/
             var D = (C.caption != null && C.caption.length);
             var G = (C.subject != null && C.subject.length && C.type && C.typeId);
             if (D || G) {

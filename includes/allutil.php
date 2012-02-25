@@ -1,7 +1,7 @@
 ﻿<?php
 define('AOWOW_REVISION', 12);
 require_once('configs/config.php');
-error_reporting(2039);
+error_reporting(0);
 ini_set('serialize_precision', 4);
 session_start();
 // Префикс
@@ -121,6 +121,16 @@ $sides = array(
 	2 => LOCALE_HORDE,
 	3 => LOCALE_BOTH_FACTIONS
 );
+
+// TODO: Get Extension from data and not from name :\
+function getExtension($str) {
+         $i = strrpos($str,".");
+         if (!$i) { return ""; }
+         $l = strlen($str) - $i;
+         $ext = substr($str,$i+1,$l);
+         return $ext;
+};
+
 // TODO: добавить форму преобразования секунд в строку времени
 function sec_to_time($secs)
 {

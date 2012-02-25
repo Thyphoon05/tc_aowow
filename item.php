@@ -8,7 +8,7 @@ require_once('includes/allnpcs.php');
 require_once('includes/allobjects.php');
 require_once('includes/allcomments.php');
 require_once('includes/allachievements.php');
-
+require_once('includes/allscreenshots.php');
 // Загружаем файл перевода для smarty
 $smarty->config_load($conf_file, 'item');
 
@@ -733,7 +733,10 @@ $smarty->assign('page', $page);
 
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
-
+$smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
+if($_GET['error']==2){
+$smarty->assign('screenshot_error', $smarty->get_config_vars('Error2'));
+};
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
 $smarty->assign('item', $item);

@@ -2,8 +2,28 @@
 <h2>{#Contribute#}</h2>
 </div>
 <div id="tabs_contribute-generic" style="width: 50%"></div>
-<div class="text" style="margin-right: 310px">
-	<div class="tabbed-contents" style="clear: none">
+		<div class="text" style="margin-right: 310px">
+		<div class="tabbed-contents" style="clear: none">
+			
+		<div id="tab-submit-a-screenshot" style="display: none">
+			{if $screenshot_error}{$screenshot_error}<BR>{/if}
+			{#Screenshots_help#}
+		<ul>
+		<li><div>{#Screenshots_help#}</div></li>
+		<li><div>{#Screenshots_quality#}</div></li>
+
+		</ul>
+		<form name="addscreenshot" enctype="multipart/form-data" action="?screenshot=add&amp;type={$page.type}&amp;typeid={$page.typeid}" method="post" onsubmit="return ss_validateForm(this)">
+		<input type="file" name="screenshotfile" /><br />
+		<small>{#Screenshots_info#}</small>
+
+		<div class="pad"></div>
+		<input type="submit" value="{#Submit#}" />
+
+		<div class="pad3"></div>
+		<small class="q0">{#Screenshots_mod#}</small>
+				</div>
+</div>
 		<div id="tab-add-your-comment" style="display: none">
 			<form name="addcomment" action="?comment=add&amp;type={$page.type}&amp;typeid={$page.typeid}" method="post" onsubmit="return co_validateForm(this)">
 				<div id="replybox-generic" style="display: none">
@@ -22,6 +42,7 @@
 <script type="text/javascript">
 	var tabsContribute = new Tabs({ldelim}parent: ge('tabs_contribute-generic'){rdelim});
 	tabsContribute.add(LANG.tab_addyourcomment, {ldelim}id: 'add-your-comment'{rdelim});
+	tabsContribute.add(LANG.tab_submitascreenshot, {ldelim}id: 'submit-a-screenshot'{rdelim});
 	tabsContribute.flush();
 </script>
 <div class="clear"></div>

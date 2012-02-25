@@ -4,6 +4,10 @@
 $smarty->config_load($conf_file, 'account');
 
 // Создание аккаунта
+if($_GET['error']==1){
+$smarty->assign('signin_error', $smarty->get_config_vars('Error1'));
+};
+
 if($_REQUEST['account'] == 'signup' && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['c_password']) && $AoWoWconf['register'] == true)
 {
 	// Совпадают ли введенные пароли?

@@ -860,7 +860,8 @@ var mn_tools=[
 		[7,"Latest Topics","?latest-topics"],
 		[8,"Unanswered Topics","?unanswered-topics"]
 	]]*/
-	[30,"Últimos comentarios","?latest=comments"]
+	[30,"Últimos comentarios","?latest=comments"],
+	[31,"Últimas capturas de pantalla","?latest=screenshots"]
 ];
 var mn_forums=[
 	[0,"WoW General"],
@@ -2311,8 +2312,8 @@ var LANG={
 	lvnodata_co1:"No se ha escrito ningún comentario.",
 	lvnodata_co2:"¡Sé el primero en <a>añadir un comentario</a> a esta página!",
 	lvnodata_co3:"Por favor, <a>entre a su cuenta</a> para añadir su comentario, o <a>regístrese</a> si todavía no tiene una cuenta.",
-	lvnodata_ss1:"No screenshots have been submitted yet.",
-	lvnodata_ss2:"Be the first to <a>submit a screenshot</a> for this page!",
+	lvnodata_ss1:"No se han subido capturas de pantalla todavia.",
+	lvnodata_ss2:"Se el primero en <a>enviar una captura de pantalla</a> para esta pagina!",
 	lvnodata_ss3:"Please <a>sign in</a> to submit a screenshot, or <a>sign up</a> if you don't already have an account.",
 	lvnote_tryfiltering:"Try <a>filtering</a> your results",
 	lvnote_trynarrowing:"Try narrowing your search",

@@ -19,6 +19,7 @@ switch($_REQUEST['comment'])
 		$url = $types[$type][0].'='.$id.'#comments';
 
 		if(strlen($text) < 10)
+			$smarty->assign('signin_error', $smarty->get_config_vars('Such_user_doesnt_exists'));
 			redirect($url);
 
 		// Нет такой категории или записи в категории
