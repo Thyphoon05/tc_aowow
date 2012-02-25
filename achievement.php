@@ -3,6 +3,7 @@ require_once('includes/allutil.php');
 require_once('includes/allachievements.php');
 require_once('includes/allitems.php');
 require_once('includes/allcomments.php');
+require_once('includes/allscreenshots.php');
 
 $smarty->config_load($conf_file, 'achievement');
 
@@ -320,6 +321,8 @@ $smarty->assign('page', $page);
 
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
+$smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
+
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
 $smarty->assign('achievement', $achievement);

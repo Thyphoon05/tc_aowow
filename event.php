@@ -1,6 +1,7 @@
 <?php
 require_once('includes/allevents.php');
 require_once('includes/allcomments.php');
+require_once('includes/allscreenshots.php');
 require_once('includes/allnpcs.php');
 require_once('includes/allobjects.php');
 require_once('includes/allquests.php');
@@ -56,6 +57,7 @@ $smarty->assign('page', $page);
 
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
+$smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
 $smarty->assign('event', $event);

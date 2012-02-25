@@ -7,6 +7,7 @@
 
 				<script type="text/javascript">
 					{include file='bricks/allcomments.tpl'}
+					{include file='bricks/allscreenshots.tpl'}
 					var g_pageInfo = {ldelim}type: {$page.type}, typeId: {$page.typeid}, name: '{$event.name|escape:"quotes"}'{rdelim};
 					g_initPath({$page.path});
 				</script>
@@ -56,6 +57,7 @@ var tabsRelated = new Tabs({ldelim}parent: ge('tabs-generic'){rdelim});
 {if isset($event.objects)}{include file='bricks/object_table.tpl' id='objects' tabsid='tabsRelated' data=$event.objects name='objects' }{/if}
 {if isset($event.quests)}{include file='bricks/quest_table.tpl' id='quests' tabsid='tabsRelated' data=$event.quests name='quests' }{/if}
 new Listview({ldelim}template: 'comment', id: 'comments', name: LANG.tab_comments, tabs: tabsRelated, parent: 'listview-generic', data: lv_comments{rdelim});
+new Listview({ldelim}template: 'screenshot', id: 'screenshots', name: LANG.tab_screenshots, tabs: tabsRelated, parent: 'listview-generic', data: lv_screenshots{rdelim});
 tabsRelated.flush();
 </script>
 

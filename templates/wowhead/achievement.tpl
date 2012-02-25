@@ -7,6 +7,7 @@
 
 				<script type="text/javascript">
 					{include file='bricks/allcomments.tpl'}
+					{include file='bricks/allscreenshots.tpl'}
 					var g_pageInfo = {ldelim}type: {$page.type}, typeId: {$page.typeid}, name: '{$achievement.name|escape:"quotes"}'{rdelim};
 					g_initPath({$page.path});
 				</script>
@@ -120,6 +121,7 @@ var tabsRelated = new Tabs({ldelim}parent: ge('tabs-generic'){rdelim});
 {if $achievement.see_also}{include		file='bricks/achievement_table.tpl'	id='see-also'		tabsid='tabsRelated'	data=$achievement.see_also		name='seealso'}{/if}
 {if $achievement.criteria_of}{include	file='bricks/achievement_table.tpl'	id='criteria-of'	tabsid='tabsRelated'	data=$achievement.criteria_of	name='criteriaof'}{/if}
 new Listview({ldelim}template: 'comment', id: 'comments', name: LANG.tab_comments, tabs: tabsRelated, parent: 'listview-generic', data: lv_comments{rdelim});
+new Listview({ldelim}template: 'screenshot', id: 'screenshots', name: LANG.tab_screenshots, tabs: tabsRelated, parent: 'listview-generic', data: lv_screenshots{rdelim});
 tabsRelated.flush();
 </script>
 

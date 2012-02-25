@@ -3,6 +3,7 @@
 require_once('includes/allobjects.php');
 require_once('includes/allitems.php');
 require_once('includes/allcomments.php');
+require_once('includes/allscreenshots.php');
 require_once('includes/allquests.php');
 require_once('includes/allachievements.php');
 require_once('includes/allevents.php');
@@ -121,6 +122,7 @@ $smarty->assign('page', $page);
 
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
+$smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
