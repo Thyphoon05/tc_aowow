@@ -774,7 +774,7 @@ function render_spell_tooltip(&$row)
 		$x .= '</td><th>';
 
 	if($range)
-		$x .= $range.' yd range<br />';
+		$x .= sprintf(LOCALE_RANGE,$range);
 
 	if($range && ($row['manacost'] > 0 || $row['manacostpercent'] > 0))
 		$x .= '</th></tr></table>';
@@ -792,9 +792,9 @@ function render_spell_tooltip(&$row)
 	if(($row['ChannelInterruptFlags'] || isset($casttime) || $row['spellcasttimesID'] == 1) && $row['cooldown'])
 		$x .= '</td><th>';
 
-	if(($row['cooldown'] < 60) and ($row['cooldown'] > 0))
+	if(($row['cooldown']/1000 < 60) and ($row['cooldown'] != 0))
 		$x.= ($row['cooldown']/1000).' '.LOCALE_SECONDS_CD;
-	elseif($row['cooldown'] > 60)
+	elseif($row['cooldown']/1000 > 60)
 		$x.= ($row['cooldown']/1000/60).' '.LOCALE_MINUTES_CD;
 	
 		

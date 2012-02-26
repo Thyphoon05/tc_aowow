@@ -275,6 +275,7 @@ switch($_SESSION['locale'])
 			'LOCALE_MINUTES_CD'		=>	' min. de reutilización.',
 			'LOCALE_SECONDS_CD'		=>	' seg. de reutilización.',
 			'LOCALE_INSTANT'		=>	' Instante.',
+			'LOCALE_RANGE'		=>	'Alcance de %d m',
 		));
 		break;
 	// --- ENGLISH default LOCALE ---
@@ -550,6 +551,7 @@ switch($_SESSION['locale'])
 			'LOCALE_MINUTES_CD'		=>	' min. cooldown.',
 			'LOCALE_SECONDS_CD'		=>	' sec. cooldown.',
 			'LOCALE_INSTANT'		=>	' Instant.',
+			'LOCALE_RANGE'		=>	'%d yd range',
 		));
 		break;
 }

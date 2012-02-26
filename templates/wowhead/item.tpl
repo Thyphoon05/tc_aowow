@@ -56,11 +56,43 @@
 							'ff0070dd',
 						{elseif $item.quality==4}
 							'ffa335ee',
-						{else}
+						{elseif $item.quality==5}
 							'ffff8000',
+						{elseif $item.quality==6}
+							'ffe5cc80',
+						{elseif $item.quality==7}
+							'ffe5cc80',
+						{elseif $item.quality==8}
+							'ffffff98',
+						{else}
+							'ff71d5ff',
 						{/if}
 						'item:{$item.entry}:0:0:0:0:0:0:0:0', '{$item.name|replace:'"':'\\\\&quot;'}')">
 					<em><b><i>Link</i></b><span>Link</span></em></a>
+					<a href="javascript:;" class="button-red" onclick="this.blur(); g_getBBCodeLink(
+						{if $item.quality==0}
+							'#9d9d9d',
+						{elseif $item.quality==1}
+							'#ffffff',
+						{elseif $item.quality==2}
+							'#1eff00',
+						{elseif $item.quality==3}
+							'#0070dd',
+						{elseif $item.quality==4}
+							'#a335ee',
+						{elseif $item.quality==5}
+							'#FF8000',
+						{elseif $item.quality==6}
+							'#e5cc80',
+						{elseif $item.quality==7}
+							'#e5cc80',
+						{elseif $item.quality==8}
+							'#ffff98',
+						{else}
+							'#71d5ff',
+						{/if}
+						'{$item.entry}', '{$item.name|replace:'"':'\\&quot;'}')">
+					<em><b><i>Link</i></b><span>Link(Foro)</span></em></a>
 					<a href="javascript:;" id="dsgndslgn464d" class="button-red" onclick="this.blur(); ModelViewer.show({ldelim} type:{$page.type}, typeId:{$item.entry}, displayId:{$item.displayid}, slot:{$item.type}{rdelim})"><em><b><i>View in 3D</i></b><span>View in 3D</span></em></a>
 
 					{/strip}
