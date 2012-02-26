@@ -1,9 +1,12 @@
 TrinityCore database World of Warcraft 3.3.5 (build 12340)
 
 - Por Hacer:
-	-Traduccion archivo configs\eses.conf
-	-Traduccion archivo templates\wowhead\js\TalentCalc_eses.js
-	-Traduccion archivo templates\wowhead\js\locale_eses.js
+	-Traduccion archivo configs\eses.conf (75% Hecho)
+	-Traduccion archivo templates\wowhead\js\TalentCalc_eses.js (95% Hecho)
+	-Traduccion archivo templates\wowhead\js\locale_eses.js (70% Hecho)
 	-Subir Base de datos/imagenes.
-	-Traducir las imagenes de templates\wowhead\images y  templates\wowhead\images\eses
-	-Cambiar http://localhost/ por direccón global.
+	-Traducir las imagenes de templates\wowhead\images y  templates\wowhead\images\eses (Hecho)
+	-Cambiar http://localhost/ por direcciÃ³n global.
+	-Moderacion en Imagenes
+	-[Seccion objetos custom](Opcional)
+	-Mejorar sistema de screenshots.
