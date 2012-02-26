@@ -6,7 +6,7 @@
 div.modelviewer-quality div
 {
 	float:left;
-	width:61px;
+	width:70px;
 	height:22px;
 	margin-right:10px;
 	background:url(../images/eses/modelviewer-picshures.gif) left center no-repeat;
@@ -15,17 +15,17 @@ div.modelviewer-quality div
 div.modelviewer-model div
 {
 	margin-left:40px;
-	margin-right:10px;
+	margin-right:5px;
 	float:left;
-	width:50px;
+	width:80px;
 	height:22px;
-	background:url(../images/eses/modelviewer-picshures.gif) -506px center no-repeat;
+	background:url(../images/eses/modelviewer-picshures.gif) -500px center no-repeat;
 }
 
 a.modelviewer-help span
 {
 	display:block;
-	width:52px;
+	width:50px;
 	height:22px;
 	background:url(../images/eses/modelviewer-picshures.gif) -100px center no-repeat;
 }
@@ -38,7 +38,7 @@ a:hover.modelviewer-help span
 a.modelviewer-close span
 {
 	display:block;
-	width:66px;
+	width:79px;
 	height:22px;
 	background:url(../images/eses/modelviewer-picshures.gif) -300px center no-repeat;
 }
@@ -51,7 +51,7 @@ a:hover.modelviewer-close span
 a.screenshotviewer-prev b
 {
 	display:block;
-	width:88px;
+	width:95px;
 	height:22px;
 	background:url(../images/eses/screenshotviewer-picshures.gif?2) -200px center no-repeat;
 }
@@ -59,7 +59,7 @@ a.screenshotviewer-prev b
 a.screenshotviewer-next b
 {
 	display:block;
-	width:53px;
+	width:95px;
 	height:22px;
 	background:url(../images/eses/screenshotviewer-picshures.gif?2) -300px center no-repeat;
 }
@@ -94,7 +94,7 @@ a:hover.screenshotviewer-original span
 a.screenshotviewer-close span
 {
 	display:block;
-	width:66px;
+	width:90px;
 	height:22px;
 	background:url(../images/eses/screenshotviewer-picshures.gif?2) 0 center no-repeat;
 }

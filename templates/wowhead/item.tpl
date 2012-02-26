@@ -61,8 +61,9 @@
 						{/if}
 						'item:{$item.entry}:0:0:0:0:0:0:0:0', '{$item.name|replace:'"':'\\\\&quot;'}')">
 					<em><b><i>Link</i></b><span>Link</span></em></a>
-					{/strip}
+					<a href="javascript:;" id="dsgndslgn464d" class="button-red" onclick="this.blur(); ModelViewer.show({ldelim} type:{$page.type}, typeId:{$item.entry}, displayId:{$item.displayid}, slot:{$item.type}{rdelim})"><em><b><i>View in 3D</i></b><span>View in 3D</span></em></a>
 
+					{/strip}
 					<a href="http://es.wowhead.com/?{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
 					<h1>{$item.name}</h1>
 
