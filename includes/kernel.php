@@ -22,7 +22,7 @@ function CheckPwd($username, $shapass)
 			$user = array();
 			$user['id'] = $user_row['uid'];
 			$user['name'] = $username;
-			$user['roles'] = ($user_row['gmlevel'])? 2:0;
+			$user['roles'] = ($user_row['gmlevel']>0)? 2:0;
 			/*
 				roles:
 					0 - Обычный пользователь (gmlevel=0)
