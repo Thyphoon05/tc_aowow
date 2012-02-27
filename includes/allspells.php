@@ -774,7 +774,7 @@ function render_spell_tooltip(&$row)
 		$x .= '</td><th>';
 
 	if($range)
-		$x .= sprintf(LOCALE_RANGE,$range);
+		$x .= sprintf(LOCALE_RANGE + '<br />',$range);
 
 	if($range && ($row['manacost'] > 0 || $row['manacostpercent'] > 0))
 		$x .= '</th></tr></table>';
