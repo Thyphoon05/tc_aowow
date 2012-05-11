@@ -859,6 +859,7 @@ var mn_tools=[
 		[7,"Latest Topics","?latest-topics"],
 		[8,"Unanswered Topics","?unanswered-topics"]
 	]]*/
+	[31,"Latest screenshots","?latest=screenshots"]
 	[30,"Latest Comments","?latest=comments"]
 ];
 var mn_forums=[
