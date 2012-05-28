@@ -3,6 +3,7 @@
 	<div id="main">
 		<div id="main-precontents"></div>
 		<div id="main-contents" class="main-contents">
+            {include file='filter.tpl'}
 			<script type="text/javascript">
 				g_initPath({$page.path});
 			</script>

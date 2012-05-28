@@ -14,6 +14,60 @@ if(!$items = load_cache(ITEM_LISTING, $cache_key))
 {
 	unset($items);
 
+  // слотове;
+   $slots = null;
+   if(isset($_REQUEST['sl'])){
+       if(is_array($_REQUEST['sl'])){
+           $sl = $_REQUEST['sl'];
+           foreach($sl as $k=>$v){
+               if(is_numeric($v)){
+                   $slots[] = $v;
+               }
+           }
+       }
+   }
+   if(!is_array($slots)){
+           for($i=0;$i<=28;$i++){
+              $slots[] = $i; 
+           }
+   }
+   
+   // вид
+   $quality = null;
+   if(isset($_REQUEST['qu'])){
+       
+       if(is_array($_REQUEST['qu'])){
+           $qu = $_REQUEST['qu'];
+           foreach($qu as $q=>$u){
+               if(is_numeric($u)){
+                   $quality[] = $u;
+               }
+           }
+       }
+   }
+   
+   if(!is_array($quality)){
+           for($i=0;$i<=7;$i++){
+              $quality[] = $i; 
+           }
+   }
+   $ad = "DESC";
+     if(isset($_REQUEST['gb']) && is_numeric($_REQUEST['gb'])){
+         
+         if($_REQUEST['gb']==1){
+             $gb = 'InventoryType';
+         }elseif($_REQUEST['gb']==2){
+             $gb = 'RequiredLevel';
+         }elseif($_REQUEST['gb']==2){
+             $gb = 'name';
+             $ad = "ASC";
+         }else{
+             $gb = 'quality';
+         }
+     }else{
+          $gb = 'quality';
+     }
+    
 	// Составляем запрос к БД, выполняющий поиск по заданным классу и подклассу
 	$rows = $DB->select('
 		SELECT ?#, i.entry, maxcount
@@ -24,8 +78,15 @@ if(!$items = load_cache(ITEM_LISTING, $cache_key))
 			id=displayid
 			{ AND class = ? }
 			{ AND subclass = ? }
-			{ AND InventoryType = ? }
-		ORDER BY quality DESC, name
+            { AND i.ItemLevel >= ? }
+            { AND i.ItemLevel <= ? }
+            { AND i.RequiredLevel >= ?}
+            { AND i.RequiredLevel <= ?}
+            { AND i.name LIKE ? }
+            { AND i.InventoryType IN (?a) }
+            { AND i.Quality IN ( ?a ) }
+            
+            ORDER BY i.?# '.$ad.', name
 		{ LIMIT ?d }
 		',
 		$item_cols[2],
@@ -33,7 +94,19 @@ if(!$items = load_cache(ITEM_LISTING, $cache_key))
 		($_SESSION['locale'])? 1: DBSIMPLE_SKIP,
 		isset($class) ? $class : DBSIMPLE_SKIP,
 		isset($subclass) ? $subclass : DBSIMPLE_SKIP,
-		isset($type) ? $type : DBSIMPLE_SKIP,
+        // search
+        isset($_REQUEST['minle']) && is_numeric($_REQUEST['minle']) ? $_REQUEST['minle'] : "0",   // min item level
+        isset($_REQUEST['maxle']) && is_numeric($_REQUEST['maxle']) ? $_REQUEST['maxle'] : "284", // max item level
+        
+        isset($_REQUEST['minrl']) && is_numeric($_REQUEST['minrl']) ? $_REQUEST['minrl'] : "0",   // min reuqest level
+        isset($_REQUEST['maxrl']) && is_numeric($_REQUEST['maxrl']) ? $_REQUEST['maxrl'] : "80",  // max request level
+
+        isset($_REQUEST['na']) ? "%". strip_tags(str_replace(array('[',']'),array('',''),urldecode($_REQUEST['na']))). "%" : "%%", // search by name
+        
+        $slots,
+        $quality,
+        $gb, 
+        
 		($AoWoWconf['limit']!=0)? $AoWoWconf['limit']: DBSIMPLE_SKIP
 	);
 
