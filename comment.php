@@ -32,14 +32,16 @@ switch($_REQUEST['comment'])
 		//$diff = $DB->selectCell('SEECT UNIX_TIMESTAMP() - UNIX_TIMESTAMP(post_date) AS diff FROM aowow_comments WHERE userid = ?d ORDER BY post_date DESC LIMIT 1', $_SESSION['userid']);
 
 		$newid = $DB->query('
-				INSERT INTO ?_comments (type, typeid, userid, commentbody, post_date, replyto)
-				VALUES (?d, ?d, ?d, ?, NOW(), ?d)
+				INSERT INTO ?_comments (type, typeid, userid, commentbody, post_date, replyto, ip)
+				VALUES (?d, ?d, ?d, ?, NOW(), ?d, ?)
 			',
 			$type,
 			$id,
 			$_SESSION['userid'] ? $_SESSION['userid'] : 0,
 			stripslashes($text),
-			$parent ? $parent : 0
+			$parent ? $parent : 0,
+            $_SERVER['REMOTE_ADDR']
+
 		);
 
 		// рейтинг

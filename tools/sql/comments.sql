@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS `aowow_comments` (
   `edit_userid` bigint(20) unsigned NOT NULL default 0 COMMENT 'Last Edit User ID',
   `edit_date` timestamp NOT NULL default 0 COMMENT 'Last Edit Time',
   `edit_count` int(10) unsigned NOT NULL default 0 COMMENT 'Count Of Edits',
+  `ip` varchar(255) DEFAULT NULL,
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=248 DEFAULT CHARSET=utf8 COMMENT='AoWoW Comments Table';
 
