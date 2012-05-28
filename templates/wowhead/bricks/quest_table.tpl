@@ -8,7 +8,7 @@
 		data:[
 			{section name=i loop=$data}
 				{ldelim}
-					id:'{$data[i].entry}',
+					id:'{$data[i].Id}',
 					name:'{$data[i].Title|escape:"quotes"}',
 					level:'{$data[i].QuestLevel}',
 					{if ($data[i].MinLevel)}
@@ -18,7 +18,7 @@
 					{if isset($data[i].itemrewards)}
 						,itemrewards:[
 							{section name=j loop=$data[i].itemrewards}
-								[{$data[i].itemrewards[j].entry},{$data[i].itemrewards[j].count}]
+								[{$data[i].itemrewards[j].Id},{$data[i].itemrewards[j].count}]
 								{if $smarty.section.j.last}{else},{/if}
 							{/section}
 						]
@@ -26,7 +26,7 @@
 					{if isset($data[i].itemchoices)}
 						,itemchoices:[
 							{section name=j loop=$data[i].itemchoices}
-								[{$data[i].itemchoices[j].entry},{$data[i].itemchoices[j].count}]
+								[{$data[i].itemchoices[j].Id},{$data[i].itemchoices[j].count}]
 								{if $smarty.section.j.last}{else},{/if}
 							{/section}
 						]
