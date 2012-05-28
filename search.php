@@ -13,7 +13,7 @@ $smarty->config_load($conf_file, 'search');
 
 // Строка поиска:
 $search = urldecode($podrazdel);
-$search = str_replace(array('[',']'),array('',''),urldecode($podrazdel));
+$nsearch = str_replace(array('[',']'),array('',''),urldecode($podrazdel));
 $smarty->assign('search', $search);
 
 // Подключаемся к ДБ
