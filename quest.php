@@ -27,7 +27,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 	// Добавляем сам квест в цепочку
 	$quest['series'] = array(
 		array(
-			'entry' => $quest['Id'],
+			'Id' => $quest['Id'],
 			'Title' => $quest['Title'],
 			'NextQuestInChain' => $quest['NextQuestInChain']
 			)
@@ -46,7 +46,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 			',
 			($_SESSION['locale']>0)? $_SESSION['locale']: DBSIMPLE_SKIP,
 			($_SESSION['locale']>0)? 1: DBSIMPLE_SKIP,
-			$quest['series'][0]['entry']
+			$quest['series'][0]['Id']
 		);
 		if($tmp)
 		{

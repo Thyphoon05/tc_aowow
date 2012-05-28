@@ -8,7 +8,7 @@
 				<script type="text/javascript">
 					{include file='bricks/allcomments.tpl'}
 					{include file='bricks/screenshots.tpl'}
-					var g_pageInfo = {ldelim}type: 5, typeId: {$quest.entry}, name: '{$quest.Title|escape:"quotes"}'{rdelim};
+					var g_pageInfo = {ldelim}type: 5, typeId: {$quest.Id}, name: '{$quest.Title|escape:"quotes"}'{rdelim};
 					g_initPath([0,3,{$quest.maincat},{$quest.category}]);
 				</script>
 
@@ -61,10 +61,10 @@
 								<tr>
 									<th>{$smarty.section.i.index+1}.</th>
 									<td>
-										{if ($quest.series[i].entry==$quest.entry)}
+										{if ($quest.series[i].Id==$quest.Id)}
 											<b>{$quest.series[i].Title}</b>
 										{else}
-											<div><a href="?quest={$quest.series[i].entry}">{$quest.series[i].Title}</a></div>
+											<div><a href="?quest={$quest.series[i].Id}">{$quest.series[i].Title}</a></div>
 										{/if}
 									</td>
 								</tr>
@@ -86,7 +86,7 @@
 							<ul>
 							{section name=i loop=$quest.req}
 								<li>
-									<div><a href="?quest={$quest.req[i].entry}">{$quest.req[i].Title}</a></div>
+									<div><a href="?quest={$quest.req[i].Id}">{$quest.req[i].Title}</a></div>
 								</li>
 							{/section}
 							</ul>
@@ -105,7 +105,7 @@
 							<ul>
 							{section name=i loop=$quest.reqone}
 								<li>
-									<div><a href="?quest={$quest.reqone[i].entry}">{$quest.reqone[i].Title}</a></div>
+									<div><a href="?quest={$quest.reqone[i].Id}">{$quest.reqone[i].Title}</a></div>
 								</li>
 							{/section}
 							</ul>
@@ -124,7 +124,7 @@
 							<ul>
 							{section name=i loop=$quest.enabledby}
 								<li>
-									<div><a href="?quest={$quest.enabledby[i].entry}">{$quest.enabledby[i].Title}</a></div>
+									<div><a href="?quest={$quest.enabledby[i].Id}">{$quest.enabledby[i].Title}</a></div>
 								</li>
 							{/section}
 							</ul>
@@ -143,7 +143,7 @@
 							<ul>
 							{section name=i loop=$quest.closes}
 								<li>
-									<div><a href="?quest={$quest.closes[i].entry}">{$quest.closes[i].Title}</a></div>
+									<div><a href="?quest={$quest.closes[i].Id}">{$quest.closes[i].Title}</a></div>
 								</li>
 							{/section}
 							</ul>
@@ -162,7 +162,7 @@
 							<ul>
 							{section name=i loop=$quest.enables}
 								<li>
-									<div><a href="?quest={$quest.enables[i].entry}">{$quest.enables[i].Title}</a></div>
+									<div><a href="?quest={$quest.enables[i].Id}">{$quest.enables[i].Title}</a></div>
 								</li>
 							{/section}
 							</ul>
@@ -181,10 +181,10 @@
 							<ul>
 							{section name=i loop=$quest.open}
 								<li>
-										{if ($quest.open[i].entry==$quest.entry)}
+										{if ($quest.open[i].Id==$quest.Id)}
 											<b>{$quest.open[i].Title}</b>
 										{else}
-											<div><a href="?quest={$quest.open[i].entry}">{$quest.open[i].Title}</a></div>
+											<div><a href="?quest={$quest.open[i].Id}">{$quest.open[i].Title}</a></div>
 										{/if}
 								</li>
 							{/section}
