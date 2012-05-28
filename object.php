@@ -48,7 +48,7 @@ if(!$object = load_cache(OBJECT_PAGE, $cache_key))
 		FROM gameobject_involvedrelation i, quest_template q
 		WHERE
 			i.id = ?d
-			AND q.entry = i.quest
+			AND q.Id = i.quest
 		',
 		$quest_cols[2],
 		$id

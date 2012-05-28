@@ -162,7 +162,7 @@ if(!$item = load_cache(ITEM_PAGE, $cache_key))
 	$rows_qr = $DB->select('
 			SELECT q.?# {, l.Title_loc?d AS Title_loc}
 			FROM quest_template q
-			{ LEFT JOIN (locales_quest l) ON l.entry=q.entry AND ? }
+			{ LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ? }
 			WHERE
 				ReqItemId1=?d
 				OR ReqItemId2=?d
@@ -186,7 +186,7 @@ if(!$item = load_cache(ITEM_PAGE, $cache_key))
 	$rows_qp = $DB->select('
 			SELECT q.?# {, l.Title_loc?d AS Title_loc}
 			FROM quest_template q
-			{ LEFT JOIN (locales_quest l) ON l.entry=q.entry AND ? }
+			{ LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ? }
 			WHERE SrcItemId=?d
 		',
 		$quest_cols[2],
@@ -206,7 +206,7 @@ if(!$item = load_cache(ITEM_PAGE, $cache_key))
 	$rows_qrw = $DB->select('
 			SELECT q.?# {, l.Title_loc?d AS Title_loc}
 			FROM quest_template q 
-			{ LEFT JOIN (locales_quest l) ON l.entry=q.entry AND ? }
+			{ LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ? }
 			WHERE
 				RewItemId1=?d
 				OR RewItemId2=?d
@@ -242,7 +242,7 @@ if(!$item = load_cache(ITEM_PAGE, $cache_key))
 			$rows_qm = $DB->select('
 					SELECT q.?# {, l.Title_loc?d AS Title_loc}
 					FROM quest_template q
-					{ LEFT JOIN (locales_quest l) ON l.entry=q.entry AND ? }
+					{ LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ? }
 					WHERE RewMailTemplateId=?d
 				',
 				$quest_cols[2],
