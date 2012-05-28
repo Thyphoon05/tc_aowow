@@ -12,9 +12,13 @@ require_once('includes/allobjects.php');
 $smarty->config_load($conf_file, 'search');
 
 // Строка поиска:
-$search = urldecode($podrazdel);
-$nsearch = str_replace(array('[',']'),array('',''),urldecode($podrazdel));
+
+$search = str_replace(array('[',']'),array('',''),urldecode($podrazdel));
+
+$nsearch = '%'.$search.'%';
+
 $smarty->assign('search', $search);
+
 
 // Подключаемся к ДБ
 global $DB;
