@@ -13,7 +13,7 @@ $smarty->config_load($conf_file, 'search');
 
 // Строка поиска:
 $search = urldecode($podrazdel);
-$nsearch = '%'.$search.'%';
+$search = str_replace(array('[',']'),array('',''),urldecode($podrazdel));
 $smarty->assign('search', $search);
 
 // Подключаемся к ДБ
@@ -210,7 +210,8 @@ if(!$found = load_cache(SEARCH, $cache_key))
 	// Если найден один элемент - перенаправляем на него
 	if(count($found) == 1 && count($found[$keys[0]]) == 1)
 	{
-		header("Location: ?".$keys[0].'='.$found[$keys[0]][0]['entry']);
+        $founded = $keys[0] == 'quest' ? "Id" : "entry";
+        header("Location: ?".$keys[0].'='.$found[$keys[0]][0][$founded]);
 	}
 	else
 	{
