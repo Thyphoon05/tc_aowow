@@ -29,7 +29,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 		array(
 			'Id' => $quest['Id'],
 			'Title' => $quest['Title'],
-			'NextQuestInChain' => $quest['NextQuestInChain']
+			'NextQuestIdChain' => $quest['NextQuestIdChain']
 			)
 	);
 	// Квесты в цепочке до этого квеста
@@ -68,7 +68,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 			',
 			($_SESSION['locale']>0)? $_SESSION['locale']: DBSIMPLE_SKIP,
 			($_SESSION['locale']>0)? 1: DBSIMPLE_SKIP,
-			$quest['series'][count($quest['series'])-1]['NextQuestInChain']
+			$quest['series'][count($quest['series'])-1]['NextQuestIdChain']
 		);
 		if($tmp)
 		{
@@ -92,7 +92,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 				FROM quest_template q
 					{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?}
 				WHERE
-					(q.NextQuestID=?d AND q.ExclusiveGroup<0)
+					(q.NextQuestId=?d AND q.ExclusiveGroup<0)
 					OR (q.Id=?d AND q.NextQuestIdChain<>?d)
 				LIMIT 20',
 				($_SESSION['locale']>0)? $_SESSION['locale']: DBSIMPLE_SKIP, ($_SESSION['locale']>0)? 1: DBSIMPLE_SKIP,
@@ -114,7 +114,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 					OR q.Id=?d
 				LIMIT 20',
 				($_SESSION['locale']>0)? $_SESSION['locale']: DBSIMPLE_SKIP, ($_SESSION['locale']>0)? 1: DBSIMPLE_SKIP,
-				$quest['Id'], $quest['NextQuestInChain'], $quest['NextQuestID']
+				$quest['Id'], $quest['NextQuestIdChain'], $quest['NextQuestId']
 				)
 		)
 			unset($quest['open']);
