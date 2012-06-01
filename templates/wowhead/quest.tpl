@@ -269,12 +269,14 @@
 {strip}
 	{if isset($quest.itemreqs)}
 		{foreach from=$quest.itemreqs key=i item=item}
-			<tr>
-				<th align="right" id="iconlist-icon{$i}"></th>
-				<td>
-					<span class="q{$item.quality}"><a href="?item={$item.entry}">{$item.name}</a></span>{if $item.count>1} ({$item.count}){/if}
-				</td>
+            {if $item.entry!=$quest.SourceItemId.entry}
+			    <tr>
+				    <th align="right" id="iconlist-icon{$i}"></th>
+				    <td>
+					    <span class="q{$item.quality}"><a href="?item={$item.entry}">{$item.name}</a></span>{if $item.count>1} ({$item.count}){/if}
+				    </td>
 			</tr>
+            {/if}
 		{/foreach}
 	{/if}
 {/strip}
@@ -338,16 +340,16 @@
 {/if}
 {/if}
 
-{if isset($quest.SrcItem)}
+{if isset($quest.SourceItemId)}
 <div class="pad"></div>
 {#Provided_Item#}:
 <table class="iconlist">
 	<tr>
 		<th align="right" id="iconlist-icon-src"></th>
-		<td><span class="q1"><a href="?item={$quest.SrcItem.entry}">{$quest.SrcItem.name}</a></span></td>
+		<td><span class="q1"><a href="?item={$quest.SourceItemId.entry}">{$quest.SourceItemId.name}</a></span></td>
 	</tr>
 </table>
-<script type="text/javascript">ge('iconlist-icon-src').appendChild(g_items.createIcon({$quest.SrcItem.entry}, 0, {$quest.SrcItem.count}));</script>
+<script type="text/javascript">ge('iconlist-icon-src').appendChild(g_items.createIcon({$quest.SourceItemId.entry}, 0, {$quest.SourceItemId.SourceItemCount}));</script>
 {/if}
 
 {if isset($quest.SrcSpell) and $quest.SrcSpell}

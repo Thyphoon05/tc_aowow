@@ -526,7 +526,7 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
                 if (!$value && isset($quest_faction_reward[$id]))
                     $value=$quest_faction_reward[$id];
                 if ($value)
-                    $data['reprewards'][] = @array_merge(factioninfo($data['RewardFactionValueId'.$j]), array('value' => $value));
+                    $data['reprewards'][] = @array_merge(factioninfo($data['RewardFactionId'.$j]), array('value' => $value));
             }
         // Вознаграждение деньгами
         if($data['RewardOrRequiredMoney']>0)

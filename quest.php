@@ -279,10 +279,10 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 	}
 
 	// Итем, выдаваемый игроку в начале квеста
-	if($quest['SrcItemId'])
+	if($quest['SourceItemId'])
 	{
-		$quest['SrcItem'] = iteminfo($quest['SrcItemId']);
-		$quest['SrcItem']['count'] = $quest['SrcItemCount'];
+		$quest['SourceItemId'] = iteminfo($quest['SourceItemId']);
+		$quest['SourceItemId']['SourceItemCount'] = $quest['SourceItemCount'];
 	}
 
 	// Дополнительная информация о квесте (флаги, повторяемость, скрипты)
@@ -291,7 +291,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 		unset($quest['flagsdetails']);
 
 	// Спелл, кастуемый на игрока в награду за выполнение
-	if($quest['RewSpellCast']>0 || $quest['RewSpell']>0)
+	if($quest['RewardSpellCast']>0 || $quest['RewardSpell']>0)
 	{
 		$tmp = $DB->SelectRow('
 			SELECT ?#, s.spellname_loc'.$_SESSION['locale'].'
@@ -321,13 +321,13 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 	for($i=0;$i<=4;++$i)
 	{
 		//echo $quest['ReqCreatureOrGOCount'.$i].'<br />';
-		if($quest['ReqCreatureOrGOId'.$i] != 0 && $quest['ReqCreatureOrGOCount'.$i] != 0)
+		if($quest['RequiredNpcOrGo'.$i] != 0 && $quest['RequiredNpcOrGoCount'.$i] != 0)
 		{
-			if($quest['ReqCreatureOrGOId'.$i] > 0)
+			if($quest['RequiredNpcOrGo'.$i] > 0)
 			{
 				// Необходимо какое-либо взамодействие с созданием
 				$quest['coreqs'][$i] = array_merge(
-					creatureinfo($quest['ReqCreatureOrGOId'.$i]),
+					creatureinfo($quest['RequiredNpcOrGo'.$i]),
 					array('req_type' => 'npc')
 				);
 			}
@@ -335,17 +335,17 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 			{
 				// необходимо какое-то взаимодействие с объектом
 				$quest['coreqs'][$i] = array_merge(
-					objectinfo(-$quest['ReqCreatureOrGOId'.$i]),
+					objectinfo(-$quest['RequiredNpcOrGo'.$i]),
 					array('req_type' => 'object')
 				);
 			}
 			// Количество
-			$quest['coreqs'][$i]['count'] = $quest['ReqCreatureOrGOCount'.$i];
+			$quest['coreqs'][$i]['count'] = $quest['RequiredNpcOrGoCount'.$i];
 			// Спелл
-			if($quest['ReqSpellCast'.$i])
+			if($quest['RequiredSpellCast'.$i])
 				$quest['coreqs'][$i]['spell'] = array(
-					'name' => $DB->selectCell('SELECT spellname_loc'.$_SESSION['locale'].' FROM ?_spell WHERE spellid=?d LIMIT 1', $quest['ReqSpellCast'.$i]),
-					'entry' => $quest['ReqSpellCast'.$i]
+					'name' => $DB->selectCell('SELECT spellname_loc'.$_SESSION['locale'].' FROM ?_spell WHERE spellid=?d LIMIT 1', $quest['RequiredSpellCast'.$i]),
+					'entry' => $quest['RequiredSpellCast'.$i]
 				);
 		}
 	}
@@ -356,8 +356,8 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 	$quest['itemreqs'] = array();
 	for($i=0;$i<=4;++$i)
 	{
-		if($quest['ReqItemId'.$i]!=0 && $quest['ReqItemCount'.$i]!=0)
-			$quest['itemreqs'][] = array_merge(iteminfo($quest['ReqItemId'.$i]), array('count' => $quest['ReqItemCount'.$i]));
+		if($quest['RequiredItemId'.$i]!=0 && $quest['RequiredItemCount'.$i]!=0)
+			$quest['itemreqs'][] = array_merge(iteminfo($quest['RequiredItemId'.$i]), array('count' => $quest['RequiredItemCount'.$i]));
 	}
 	if(!$quest['itemreqs'])
 		unset($quest['itemreqs']);
