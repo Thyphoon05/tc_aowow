@@ -269,7 +269,7 @@
 {strip}
 	{if isset($quest.itemreqs)}
 		{foreach from=$quest.itemreqs key=i item=item}
-            {if $item.entry!=$quest.SourceItemId.entry}
+            {if $item.entry!=$quest.SourceItemId.entry && $quest.SourceItemId.entry!=0}
 			    <tr>
 				    <th align="right" id="iconlist-icon{$i}"></th>
 				    <td>
@@ -340,7 +340,7 @@
 {/if}
 {/if}
 
-{if isset($quest.SourceItemId)}
+{if isset($quest.SourceItemId) && $quest.SourceItemId!=0}
 <div class="pad"></div>
 {#Provided_Item#}:
 <table class="iconlist">
