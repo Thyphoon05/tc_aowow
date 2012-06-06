@@ -27,9 +27,13 @@ if(!$items = load_cache(ITEM_LISTING, $cache_key))
        }
    }
    if(!is_array($slots)){
+       if(isset($type)){
+           $slots[] = $type;
+       }else{
            for($i=0;$i<=28;$i++){
               $slots[] = $i; 
            }
+       }
    }
    
    // вид

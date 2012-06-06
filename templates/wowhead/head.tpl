@@ -21,6 +21,9 @@
 		<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="templates/wowhead/css/TalentCalc_ie6.css?{$AOWOW_REVISION}" /><![endif]-->
 		<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="templates/wowhead/css/TalentCalc_ie67.css?{$AOWOW_REVISION}" /><![endif]-->
 {/if}
+    <script type="text/javascript">
+        var DOMAIN = "http://{$smarty.server.HTTP_HOST}"; 
+    </script>
 
 	<script src="templates/wowhead/js/locale_{$language}.js?{$AOWOW_REVISION}" type="text/javascript"></script>
 	<script src="templates/wowhead/js/swfobject.js?{$AOWOW_REVISION}" type="text/javascript"></script>

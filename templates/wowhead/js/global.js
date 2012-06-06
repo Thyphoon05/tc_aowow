@@ -22,7 +22,7 @@
    - relocate ?search to opensearch.php?search
  8. Added this.applySort(); in Listview prototype. May be it unneeded in some case, but i can't find such examples.
  9. Changed items percents handling.
-   - backported support of negative probabilities for quest items
+   - backported support of negative probabilities for quest items     
 */function $(c) {
     if (arguments.length > 1) {
         var b = [];
@@ -1265,11 +1265,11 @@ g_getIdFromTypeName.L = {npc: 1,object: 2,item: 3,itemset: 4,quest: 5,spell: 6,z
 function g_getIngameLink(a, c, b) {
     prompt(LANG.prompt_ingamelink, '/script DEFAULT_CHAT_FRAME:AddMessage("\\124c' + a + "\\124H" + c + "\\124h[" + b + ']\\124h\\124r");')
 }
-function g_getBBCodeLink(a, c, b) {
+function g_getBBCodeLink(a, c, b) {    
     var f = b.split(" ");
 	var g = "";
     for (var x = 0, y = f.length; x < y; ++x) {
-		g+='[url=http://mewetdb.in/?item=' + c +'][color=' + a + ']' +f[x]+' [/color][/url]';
+		g+='[url='+DOMAIN+'/?item=' + c +'][color=' + a + ']' +f[x]+' [/color][/url]';
     }
 	prompt(LANG.prompt_bbcodelink, g)
 }
@@ -7021,7 +7021,7 @@ function() {
                 }
             }
         }
-        var P = "http://mewetdb.in/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
+        var P = DOMAIN+"/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
         g_ajaxIshRequest(P)
     }
     function N(R, S) {
