@@ -440,6 +440,9 @@ function render_item_tooltip(&$Row)
 	if(classes($Row['AllowableClass']))
 		$x .= LOCALE_CLASSES.': '.classes($Row['AllowableClass']).'<br />';
 
+    if($Row['ItemLevel']!=0)
+        $x .= LOCALE_ITEM_LEVEL.' '.$Row['ItemLevel'].'<br />';
+
 	// Требуемый уровень
 	if($Row['RequiredLevel']>1)
 		$x .= LOCALE_REQUIRES_LEVEL.' '.$Row['RequiredLevel'].'<br />';
@@ -465,8 +468,19 @@ function render_item_tooltip(&$Row)
 		$row = factioninfo($Row['RequiredReputationFaction']);
 		$x .= LOCALE_REQUIRES.' '.$row['name'].' - '.$rep_levels[$Row['RequiredReputationRank']];
 	}
-
-	$x .= '</td></tr></table>';
+    
+     if($Row['SellPrice']>0){
+        $sellgold = floor($Row['SellPrice']/10000);
+        $sellsilver = floor($Row['SellPrice']%10000/100);
+        $sellcopper = floor($Row['SellPrice']%100);
+        $x .= LOCALE_SELLPRICE .' ';
+        if($sellgold>0)
+            $x .=  '<span class="moneygold">'.$sellgold.'</span> ';
+        if($sellsilver>0)
+            $x .= '<span class="moneysilver">'.$sellsilver.'</span> ';
+        if($sellcopper>0)
+            $x .= '<span class="moneycopper">'.$sellcopper.'</span> <br />';
+     }	$x .= '</td></tr></table>';
 
 	// Спеллы
 	for($j=1;$j<=5;$j++)
@@ -585,7 +599,7 @@ function iteminfo2(&$Row, $level=0)
 	$item['reqlevel'] = $Row['RequiredLevel'];
 	// Класс и подкласс вещи
 	// TODO: немного неверное определение
-	$item['class'] = $Row['class'];
+	$item['classs'] = $Row['class'];
 	$item['subclass'] = $Row['subclass'];
 	// Иконка вещи
 	$item['iconname'] = $Row['iconname'];
