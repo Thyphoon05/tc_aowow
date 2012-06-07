@@ -585,7 +585,7 @@ function iteminfo2(&$Row, $level=0)
 	$item['reqlevel'] = $Row['RequiredLevel'];
 	// Класс и подкласс вещи
 	// TODO: немного неверное определение
-	$item['classs'] = $Row['class'];
+	$item['class'] = $Row['class'];
 	$item['subclass'] = $Row['subclass'];
 	// Иконка вещи
 	$item['iconname'] = $Row['iconname'];
