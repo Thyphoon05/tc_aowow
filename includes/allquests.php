@@ -361,7 +361,7 @@ function GetDBQuestInfo($id, $dataflag = QUEST_DATAFLAG_MINIMUM)
             SELECT
                 
                 { ?# } {, ?# } {, ?# } {, ?# } {, ?# }
-            FROM uest_template
+            FROM quest_template
             WHERE Id=?d
             LIMIT 1
         ',
