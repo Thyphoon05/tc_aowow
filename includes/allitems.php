@@ -469,18 +469,7 @@ function render_item_tooltip(&$Row)
 		$x .= LOCALE_REQUIRES.' '.$row['name'].' - '.$rep_levels[$Row['RequiredReputationRank']];
 	}
     
-     if($Row['SellPrice']>0){
-        $sellgold = floor($Row['SellPrice']/10000);
-        $sellsilver = floor($Row['SellPrice']%10000/100);
-        $sellcopper = floor($Row['SellPrice']%100);
-        $x .= LOCALE_SELLPRICE .' ';
-        if($sellgold>0)
-            $x .=  '<span class="moneygold">'.$sellgold.'</span> ';
-        if($sellsilver>0)
-            $x .= '<span class="moneysilver">'.$sellsilver.'</span> ';
-        if($sellcopper>0)
-            $x .= '<span class="moneycopper">'.$sellcopper.'</span> <br />';
-     }	$x .= '</td></tr></table>';
+    	$x .= '</td></tr></table>';
 
 	// Спеллы
 	for($j=1;$j<=5;$j++)
@@ -570,6 +559,19 @@ function render_item_tooltip(&$Row)
 		}
 		$x .= '</span></span>';
 	}
+    
+        if($Row['SellPrice']>0){
+            $sellgold = floor($Row['SellPrice']/10000);
+            $sellsilver = floor($Row['SellPrice']%10000/100);
+            $sellcopper = floor($Row['SellPrice']%100);
+            $x .= LOCALE_SELLPRICE .' ';
+            if($sellgold>0)
+                $x .=  '<span class="moneygold">'.$sellgold.'</span> ';
+            if($sellsilver>0)
+                $x .= '<span class="moneysilver">'.$sellsilver.'</span> ';
+            if($sellcopper>0)
+                $x .= '<span class="moneycopper">'.$sellcopper.'</span> <br />';
+     }    
 	$x .= '</td></tr></table>';
 	return $x;
 }

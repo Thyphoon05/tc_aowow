@@ -13,7 +13,7 @@
 
 
 <form action="" method="get" name="fi" onsubmit="return fi_submit(this)" onreset="return fi_reset(this)">
-<input type="hidden" name="items" value="filter" />
+<input type="hidden" name="items" value="{$podrazdel}" />
 <div class="rightpanel">
 <div style="float: left">Quality: </div><small><a href="javascript:;" onclick="document.forms['fi'].elements['qu[]'].selectedIndex = -1; return false" onmousedown="return false">clear</a></small>
 <div class="clear"></div>

@@ -149,6 +149,7 @@ $smarty->assign('page', $page);
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
 $smarty->assign('items', $items);
+$smarty->assign('podrazdel', $podrazdel);
 $smarty->assign('item_tot',(is_array($item_tot) ? $item_tot[0]['item_tot'] : $item_tot));
 // Загружаем страницу
 $smarty->display('items.tpl');
