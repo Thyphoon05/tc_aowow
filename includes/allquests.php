@@ -57,27 +57,34 @@ $quest_faction_reward = array(
     9 => 5
 );
 
-// Флаги квестов
+// Quest flags
 define('QUEST_FLAGS_NONE',                0);
-define('QUEST_FLAGS_STAY_ALIVE',        1);
+define('QUEST_FLAGS_STAY_ALIVE',          1);
 define('QUEST_FLAGS_PARTY_ACCEPT',        2);
-define('QUEST_FLAGS_EXPLORATION',        4);
+define('QUEST_FLAGS_EXPLORATION',         4);
 define('QUEST_FLAGS_SHARABLE',            8);
-define('QUEST_FLAGS_NONE2',                16);
+define('QUEST_FLAGS_NONE2',               16);
 define('QUEST_FLAGS_EPIC',                32);
 define('QUEST_FLAGS_RAID',                64);
-define('QUEST_FLAGS_TBC',                128);
-define('QUEST_FLAGS_UNK2',                256);
-define('QUEST_FLAGS_HIDDEN_REWARDS',    512);
-define('QUEST_FLAGS_AUTO_REWARDED',    1024);
-define('QUEST_FLAGS_TBC_RACES',            2048);
-define('QUEST_FLAGS_DAILY',                4096);
-define('QUEST_FLAGS_UNK5',                8192);
-
-define('QUEST_SPECIALFLAGS_NONE',        0);
-define('QUEST_SPECIALFLAGS_REPEATABLE',    1);
-define('QUEST_SPECIALFLAGS_SCRIPTED',    2);
-
+define('QUEST_FLAGS_TBC',                 128);
+define('QUEST_FLAGS_DELIVER_MORE',        256);
+define('QUEST_FLAGS_HIDDEN_REWARDS',      512);
+define('QUEST_FLAGS_AUTO_REWARDED',       1024);
+define('QUEST_FLAGS_TBC_RACES',           2048);
+define('QUEST_FLAGS_DAILY',               4096);
+define('QUEST_FLAGS_REPEATABLE',          8192);
+define('QUEST_FLAGS_UNAVAILABLE',         16384);
+define('QUEST_FLAGS_WEEKLY',              32768);
+define('QUEST_FLAGS_AUTOCOMPLETE',        65536);
+define('QUEST_FLAGS_SPECIAL_ITEM',        131072);
+define('QUEST_FLAGS_OBJ_TEXT',            262144);
+define('QUEST_FLAGS_AUTO_ACCEPT',         524288);
+// Special flags
+define('QUEST_SPECIALFLAGS_NONE',         0);
+define('QUEST_SPECIALFLAGS_REPEATABLE',   1);
+define('QUEST_SPECIALFLAGS_EXTERNL_EVENT',2);
+define('QUEST_SPECIALFLAGS_AUTO_ACCEPT',  4);
+define('QUEST_SPECIALFLAGS_DUNGEONFINDER',8);
 // Флаги для GetQuestInfo
 define('QUEST_DATAFLAG_MINIMUM',    1);
 define('QUEST_DATAFLAG_STRINGS',    2);
@@ -145,18 +152,24 @@ function GetFlagsDetails($data)
         if ($data['Flags'] & QUEST_FLAGS_EPIC)           $result[] = LOCALE_QUEST_FLAGS_EPIC;
         if ($data['Flags'] & QUEST_FLAGS_RAID)           $result[] = LOCALE_QUEST_FLAGS_RAID;
         if ($data['Flags'] & QUEST_FLAGS_TBC)            $result[] = LOCALE_QUEST_FLAGS_TBC;
-        //if ($data['Flags'] & QUEST_FLAGS_UNK2)           $result[] = LOCALE_QUEST_FLAGS_UNK2;
+        if ($data['Flags'] & QUEST_FLAGS_DELIVER_MORE)   $result[] = LOCALE_QUEST_FLAGS_DELIVER_MORE;
         if ($data['Flags'] & QUEST_FLAGS_HIDDEN_REWARDS) $result[] = LOCALE_QUEST_FLAGS_HIDDEN_REWARDS;
         if ($data['Flags'] & QUEST_FLAGS_AUTO_REWARDED)  $result[] = LOCALE_QUEST_FLAGS_AUTO_REWARDED;
         if ($data['Flags'] & QUEST_FLAGS_TBC_RACES)      $result[] = LOCALE_QUEST_FLAGS_TBC_RACES;
         if ($data['Flags'] & QUEST_FLAGS_DAILY)          $result[] = LOCALE_QUEST_FLAGS_DAILY;
-        if ($data['Flags'] & QUEST_FLAGS_UNK5)           $result[] = LOCALE_QUEST_FLAGS_UNK5;
+        if ($data['Flags'] & QUEST_FLAGS_REPEATABLE)     $result[] = LOCALE_QUEST_FLAGS_REPEATABLE;
+        if ($data['Flags'] & QUEST_FLAGS_UNAVAILABLE)    $result[] = LOCALE_QUEST_FLAGS_UNAVAILABLE;
+        if ($data['Flags'] & QUEST_FLAGS_WEEKLY)         $result[] = LOCALE_QUEST_FLAGS_WEEKLY;
+        if ($data['Flags'] & QUEST_FLAGS_AUTOCOMPLETE)   $result[] = LOCALE_QUEST_FLAGS_AUTOCOMPLETE;
+        if ($data['Flags'] & QUEST_FLAGS_SPECIAL_ITEM)   $result[] = LOCALE_QUEST_FLAGS_SPECIAL_ITEM;
+        if ($data['Flags'] & QUEST_FLAGS_OBJ_TEXT)       $result[] = LOCALE_QUEST_FLAGS_OBJ_TEXT;
+        if ($data['Flags'] & QUEST_FLAGS_AUTO_ACCEPT)    $result[] = LOCALE_QUEST_FLAGS_AUTO_ACCEPT;
     }
 
     // Неявно используемые доп. элементы (интересно, кто назвал эту константу "..._UNK2"?)
-    if (($data['Flags'] & QUEST_FLAGS_UNK2) || $SourceItems)
+    if (($data['Flags'] & QUEST_FLAGS_DELIVER_MORE) || $SourceItems)
     {
-        $tmp = LOCALE_QUEST_FLAGS_UNK2;
+        $tmp = LOCALE_QUEST_FLAGS_DELIVER_MORE;
         if ($SourceItems) $tmp = $tmp . " (" . implode(", ", $SourceItems) . ")";
         $result[] = $tmp;
     }
@@ -164,8 +177,10 @@ function GetFlagsDetails($data)
     // Специальные серверные флаги - повторяемость и завершение скриптом
     if ($data['SpecialFlags'])
     {
-        if ($data['SpecialFlags'] & QUEST_SPECIALFLAGS_REPEATABLE) $result[] = LOCALE_QUEST_SPECIALFLAGS_REPEATABLE;
-        if ($data['SpecialFlags'] & QUEST_SPECIALFLAGS_SCRIPTED)   $result[] = LOCALE_QUEST_SPECIALFLAGS_SCRIPTED;
+        if ($data['SpecialFlags'] & QUEST_SPECIALFLAGS_REPEATABLE)   $result[] = LOCALE_QUEST_SPECIALFLAGS_REPEATABLE;
+        if ($data['SpecialFlags'] & QUEST_SPECIALFLAGS_EXTERNL_EVENT)$result[] = LOCALE_QUEST_SPECIALFLAGS_EXTERNL_EVENT;
+        if ($data['SpecialFlags'] & QUEST_SPECIALFLAGS_AUTO_ACCEPT)  $result[] = LOCALE_QUEST_SPECIALFLAGS_AUTO_ACCEPT;
+        if ($data['SpecialFlags'] & QUEST_SPECIALFLAGS_DUNGEONFINDER)$result[] = LOCALE_QUEST_SPECIALFLAGS_DUNGEONFINDER;
     }
 
     // Наличие стартовых и финишных скриптов
