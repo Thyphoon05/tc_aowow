@@ -45,7 +45,7 @@ define('GAMEOBJECT_TYPE_LOTTERY_KIOSK', 28);
 define('GAMEOBJECT_TYPE_CAPTURE_POINT', 29);
 define('GAMEOBJECT_TYPE_AURA_GENERATOR', 30);
 define('GAMEOBJECT_TYPE_DUNGEON_DIFFICULTY', 31);
-define('GAMEOBJECT_TYPE_UNK', 32);
+define('GAMEOBJECT_TYPE_BARBER_CHAIR', 32);
 define('GAMEOBJECT_TYPE_DESTRUCTIBLE_BUILDING', 33);
 define('GAMEOBJECT_TYPE_GUILD_BANK', 34);
 
@@ -371,7 +371,7 @@ function objectinfo2(&$Row, $level=0)
 						* data1: difficulty (0 or 1)
 				*/
 				break;
-			case GAMEOBJECT_TYPE_UNK:
+			case GAMEOBJECT_TYPE_BARBER_CHAIR:
 				/*	Object type not used */
 				break;
 			case GAMEOBJECT_TYPE_DESTRUCTIBLE_BUILDING:
