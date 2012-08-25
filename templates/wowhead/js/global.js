@@ -3297,7 +3297,9 @@ Listview.prototype = {initialize: function() {
             return a.getValue(b)
         }
         if (a.value) {
-            return b[a.value]
+ 
+        }
+        if (!(this.hideBands            return b[a.value]
         }
         if (a.compute) {
             return a.compute(b)
@@ -7021,7 +7023,7 @@ function() {
                 }
             }
         }
-        var P = "/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
+        var P = "ajax.php?" + p[W][1] + "=" + S + "&power" + R;
         g_ajaxIshRequest(P)
     }
     function N(R, S) {
