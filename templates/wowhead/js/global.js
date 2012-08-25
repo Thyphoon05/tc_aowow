@@ -7021,7 +7021,7 @@ function() {
                 }
             }
         }
-        var P = DOMAIN+"/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
+        var P = "/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
         g_ajaxIshRequest(P)
     }
     function N(R, S) {
