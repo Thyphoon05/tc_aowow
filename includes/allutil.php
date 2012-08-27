@@ -184,7 +184,7 @@ function classes($class)
 	if($class & CLASS_SHAMAN)
 		if($tmp) $tmp = $tmp.', '.LOCALE_SHAMAN; else $tmp = LOCALE_SHAMAN;
 	if($class & CLASS_DEATH_KNIGHT)
-		if($tmp) $tmp = $tmp.', '.LOCALE_DEATH_KNIGHT; else $tmp = LOCALE_DEATH_KNIGHT
+		if($tmp) $tmp = $tmp.', '.LOCALE_DEATH_KNIGHT; else $tmp = LOCALE_DEATH_KNIGHT;
 	if($class & CLASS_MAGE)
 		if($tmp) $tmp = $tmp.', '.LOCALE_MAGE; else $tmp = LOCALE_MAGE;
 	if($class & CLASS_WARLOCK)
