@@ -556,7 +556,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 	}
 
 	// Награды и благодарности, присылаемые почтой
-	if ($quest['RewMailTemplateId'])
+	if ($quest['RewardMailTemplateId'])
 	{
 		if(!($quest['mailrewards'] = loot('mail_loot_template', $quest['RewardMailTemplateId'])))
 			unset ($quest['mailrewards']);
