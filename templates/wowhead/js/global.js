@@ -3297,9 +3297,7 @@ Listview.prototype = {initialize: function() {
             return a.getValue(b)
         }
         if (a.value) {
- 
-        }
-        if (!(this.hideBands            return b[a.value]
+            return b[a.value]
         }
         if (a.compute) {
             return a.compute(b)
@@ -6460,7 +6458,7 @@ Listview.templates = {faction: {sort: [1],nItemsPerPage: -1,searchable: 1,filtra
                     if (f.level) {
                         var e = ce("td");
                         e.style.width = "1px";
-                        e.style.padding = "0";
+                  q10      e.style.padding = "0";
                         e.style.borderRight = "none";
                         ae(e, Icon.create(f.icon ? f.icon : "chr_" + g_file_races[f.race] + "_" + g_file_genders[f.gender] + "_" + g_file_classes[f.classs] + "0" + (f.level > 59 ? (Math.floor((f.level - 60) / 10) + 2) : 1), 1));
                         ae(h, e);
