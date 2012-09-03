@@ -374,7 +374,7 @@ if(!$spell = load_cache(SPELL_PAGE, $cache_key))
 				FROM quest_template c
 				{ LEFT JOIN (locales_quest l) ON c.entry = l.entry AND ? }
 				WHERE
-					RewSpell IN (?a) OR RewSpellCast IN (?a)
+					RewardSpell IN (?a) OR RewardSpellCast IN (?a)
 				',
 				$quest_cols[2],
 				($_SESSION['locale']>0)? $_SESSION['locale']: DBSIMPLE_SKIP,
@@ -510,8 +510,8 @@ if(!$spell = load_cache(SPELL_PAGE, $cache_key))
 			FROM quest_template c
 			{ LEFT JOIN (locales_quest l) ON c.entry = l.entry AND ? }
 			WHERE
-				RewSpell = ?d
-				OR RewSpellCast = ?d
+				RewardSpell = ?d
+				OR RewardSpellCast = ?d
 			',
 			$quest_cols[2],
 			($_SESSION['locale']>0)? $_SESSION['locale']: DBSIMPLE_SKIP,

@@ -306,15 +306,15 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 
 		// Начиниают квесты...
 		$rows_qs = $DB->select('
-			SELECT ?#
-			FROM creature_questrelation c, quest_template q
-			WHERE
-				c.id=?
-				AND q.Id=c.quest
-			',
-			$quest_cols[2],
-			$id
-		);
+                	SELECT q.?#
+                FROM quest_template q
+                LEFT JOIN creature_questrelation c on q.id = c.quest
+                WHERE
+                    c.id=?
+             	',
+            	$quest_cols[2],
+            	$id
+        	);
 		if($rows_qs)
 		{
 			$npc['starts'] = array();
@@ -337,16 +337,16 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 		unset ($rows_qse);
 
 		// Заканчивают квесты...
-		$rows_qe = $DB->select('
-			SELECT ?#
-			FROM creature_involvedrelation c, quest_template q
-			WHERE
-				c.id=?
-				AND q.Id=c.quest
-			',
-			$quest_cols[2],
-			$id
-		);
+$rows_qe = $DB->select('
+        SELECT q.?#
+        FROM quest_template q
+        LEFT JOIN creature_involvedrelation c on q.id = c.quest
+        WHERE
+                c.id=?
+        ',
+        $quest_cols[2],
+        $id
+        );
 		if($rows_qe)
 		{
 			$npc['ends'] = array();

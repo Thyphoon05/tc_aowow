@@ -793,7 +793,7 @@ function g_initHeaderMenus() {
         c.menu = [[0, "Spanish", (g_locale.id != 6 ? "?locale=6" : null)], [0, "English", (g_locale.id != 0 ? "?locale=0" : null)]];
         c.menu.rightAligned = 1;
         if (g_locale.id != 25) {
-            c.menu[{6: 0,0: 1,}[g_locale.id]].checked = 1
+            c.menu[{6: 0,0: 1}[g_locale.id]].checked = 1
         }
         c.onmouseover = Menu.show;
         c.onmouseout = Menu.hide
@@ -7021,7 +7021,7 @@ function() {
                 }
             }
         }
-        var P = DOMAIN+"/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
+        var P = "ajax.php?" + p[W][1] + "=" + S + "&power" + R;
         g_ajaxIshRequest(P)
     }
     function N(R, S) {

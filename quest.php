@@ -301,14 +301,14 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 				AND si.id=s.spellicon
 			LIMIT 1',
 			$spell_cols[0],
-			$quest['RewSpell']>0?$quest['RewSpell']:$quest['RewSpellCast']
+			$quest['RewardSpell']>0?$quest['RewardSpell']:$quest['RewardSpellCast']
 		);
 		if($tmp)
 		{
 			$quest['spellreward'] = array(
 				'name' => $tmp['spellname_loc'.$_SESSION['locale']],
 				'entry' => $tmp['spellID'],
-				'realentry' => $quest['RewSpellCast']>0 ? $quest['RewSpellCast'] : $quest['RewSpell']);
+				'realentry' => $quest['RewardSpellCast']>0 ? $quest['ReardwSpellCast'] : $quest['RewardSpell']);
 			allspellsinfo2($tmp);
 		}
 		unset($tmp);
@@ -556,13 +556,13 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 	}
 
 	// Награды и благодарности, присылаемые почтой
-	if ($quest['RewMailTemplateId'])
+	if ($quest['RewardMailTemplateId'])
 	{
-		if(!($quest['mailrewards'] = loot('mail_loot_template', $quest['RewMailTemplateId'])))
+		if(!($quest['mailrewards'] = loot('mail_loot_template', $quest['RewardMailTemplateId'])))
 			unset ($quest['mailrewards']);
 	}
-	if ($quest['RewMailDelaySecs'])
-		$quest['maildelay'] = sec_to_time($quest['RewMailDelaySecs']);
+	if ($quest['RewardMailDelay'])
+		$quest['maildelay'] = sec_to_time($quest['RewardMailDelay']);
 
 	save_cache(QUEST_PAGE, $cache_key, $quest);
 }
